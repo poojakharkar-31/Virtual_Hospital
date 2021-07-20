@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portion Tracker</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Poppins', sans-serif;
+		}
+		body:before {
+			content: '';
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			background-image: url(https://nilliawebdesign.com/images/hero-index.jpg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			-webkit-background-size: cover;
+			background-size: cover;
+			-webkit-filter: blur(0px);
+			-moz-filter: blur(0px);
+			filter: blur(0px);
+		}
+		.login-form {
+			position: absolute;
+			top: 60%;
+			left: 30%;
+			transform: translate(-50%, -50%);
+			width: 700px;
+			height: 700px;
+			padding: 80px 50px;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		.login-form h4 {
+			margin: 0;
+			padding: 0 0 20px;
+			color: #f0ffff;
+			text-align: center;
+			text-transform: uppercase;
+			font-family: 'Times New Roman', serif;
+			font-size: 30px;
+
+		}
+		.login-form h5 {
+			margin: 0;
+			padding: 0 0 40px;
+			/*color: #FEE8D6;*/
+			color: #BBFFFF;
+			text-align:;
+			text-transform: uppercase;
+			font-family: 'Times New Roman', serif;
+			font-size: 25px;
+
+		}
+		.login-form p {
+			margin: 0;
+			padding: 0;
+			font-weight: bold;
+			color: #fff;
+		}
+		/*.login-form input {
+			width: 100%;
+			margin-bottom: 20px;
+		}*/
+		.login-form select {
+			border: none;
+			border-bottom: 1px solid #fff;
+			background: transparent;
+			outline: none;
+			height: 40px;
+			color: #fff;
+			font-size: 16px;
+		}
+		.login-form input {
+			border: none;
+			border-bottom: 1px solid #fff;
+			background: transparent;
+			outline: none;
+			height: 40px;
+			color: white;
+			font-size: 16px;
+		}
+		.login-form form-group {
+			color: lightblue;
+		}
+		.login-form button{
+			height: 30px;
+			color: #fff;
+			font-size: 15px;
+			background: red;
+			cursor: pointer;
+			border-radius: 25px;
+			border: none;
+			outline: none;
+			margin-top: 15%;
+		}
+
+		.login-form a {
+			height: 20px;
+			color: lightblue;
+			font-size: 20px;
+			/*background: red;*/
+			/*cursor: pointer;
+			border-radius: 0;
+			border: none;
+			outline: none;*/
+			margin-top: 15%;
+		}
+		.divider{
+			width: 350px;
+			height: auto;
+			display: inline-block;
+		}
+		.list-group-item{
+			background: transparent;
+			color: #ffffff;
+            width: auto !important;
+		}
+		/*body{
+			margin-top: 0px;
+			background-color: #f0f0f0;
+		}
+		
+		.autocenter{
+			float: none;
+			margin: auto;
+		}	*/	
+	</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+	<a class="navbar-brand" style="font-size: 30px; text-align: center; color: white; font-family: 'Times New Roman', serif" href="#">Portion Tracker</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/profile" style="font-size: 20px; text-align: center; color: white; font-family: 'Times New Roman', serif">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/students" style="font-size: 20px; text-align: center; color: white; font-family: 'Times New Roman', serif">Students</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/courses" style="font-size: 20px; text-align: center; color: white; font-family: 'Times New Roman', serif">Courses</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/teachers" style="font-size: 20px; text-align: center; color: white; font-family: 'Times New Roman', serif">Teachers</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/lectures" style="font-size: 20px; text-align: center; color: white; font-family: 'Times New Roman', serif">Lectures</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/logout" style="font-size: 20px; text-align: center; color: red; font-family: 'Times New Roman', serif">Logout</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="login-form">
+	<h4>Profile Info</h4>
+	<br>
+<!-- <div class="container">
+	<div class="col-sm-6 autocenter">
+		<div class="card">
+			<div class="card-header">
+				
+			</div> -->
+			<!-- <div class="card-body"> -->
+				<div class="list-group">						
+					<div class="list-group-item">
+						<label style="font-size: 20px; text-align: center; color: lightblue; font-family: 'Times New Roman', serif"><i>Email :</i></label> <%=email; %>					
+					</div>
+					<div class="list-group-item">
+						<label style="font-size: 20px; text-align: center; color: lightblue; font-family: 'Times New Roman', serif"><i>Name :</i></label> <%=username; %>				
+					</div>
+					<div class="list-group-item">
+						<label style="font-size: 20px; text-align: center; color: lightblue; font-family: 'Times New Roman', serif"><i>Password :</i></label> <%=password; %>					
+					</div>
+					<div class="list-group-item">
+						<label style="font-size: 20px; text-align: center; color: lightblue; font-family: 'Times New Roman', serif"><i>Contact No. :</i></label> <%=mobile; %>					
+					</div>
+
+					<div class="list-group-item">
+						<label style="font-size: 20px; text-align: center; color: lightblue; font-family: 'Times New Roman', serif"><i>Branch :</i></label> <%=branch; %>					
+					</div>
+				</div>
+				<br>
+				<button class="btn btn-primary" onclick="location.assign('/logout')" >Log Out</button>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<!-- <button class="btn btn-primary" onclick="location.assign('/students')" style="background-color: darkblue">Students</button> -->
+				<br>
+				<h5><i>>> Students</i></h5>
+				<a href="/students">
+					<img src="https://campustechnology.com/-/media/EDU/CampusTechnology/2019-Images/20190522studentsuccess.jpg" width="500" height="300" style="padding: 0px 0px; font-size: 20px">
+				</a>
+				<br>
+				<br>
+				<br>
+
+				<h5><i>>> Courses</i></h5>
+				<a href="/courses">
+					<img src="https://www.collegebasics.com/wp-content/uploads/2019/08/8-Things-You-Need-to-Know-When-Developing-an-Online-Course-1.jpg" width="500" height="300" style="padding: 0px 0px; font-size: 20px">
+				</a>
+				<br>
+				<br>
+				<br>
+
+				<h5><i>>> Teachers</i></h5>
+				<a href="/teachers">
+					<img src="https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2020/march/6-ways-to-improve-online-teaching.jpg" width="500" height="300" style="padding: 0px 0px; font-size: 20px">
+				</a>
+				<br>
+				<br>
+				<br>
+
+				<h5><i>>> Lectures</i></h5>
+				<a href="/lectures">
+					<img src="https://www.usnews.com/dims4/USNEWS/6cdd0ce/2147483647/crop/2120x1414%2B0%2B0/resize/970x647/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fef%2F6f%2Fefdc54224a46ad4b82da4dbb3ffa%2F180111-onlinecourse-stock.jpg" width="500" height="300" style="padding: 0px 0px; font-size: 20px">
+				</a>
+				<br>
+				<br>
+				<br>
+
+
+
+				<!-- <button class="btn btn-primary" onclick="location.assign('/courses')" style="background-color: lightblue">Courses</button>
+				
+				<button class="btn btn-primary" onclick="location.assign('/teachers')" style="background-color: darkblue">Teachers</button>
+				
+				<button class="btn btn-primary" onclick="location.assign('/lectures')" style="background-color: darkblue">Lectures</button>
+				
+ -->
+			<!-- </div>
+		</div>
+	</div> -->
+
+</div>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+</body>
+</html>

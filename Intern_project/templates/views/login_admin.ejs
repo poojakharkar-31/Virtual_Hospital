@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portion Tracker</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Poppins', sans-serif;
+		}
+		body:before {
+			content: '';
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			/*background-image: url(https://ctovision.com/wp-content/uploads/technetwork.jpg);*/
+			background-image: url(https://www.paydayonesource.com/hubfs/Imported_Blog_Media/iStock_000032426138_Large.jpg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			-webkit-background-size: cover;
+			background-size: cover;
+			-webkit-filter: blur(0px);
+			-moz-filter: blur(0px);
+			filter: blur(0px);
+		}
+		.login-form {
+			position: absolute;
+			top: 50%;
+			left: 23%;
+			transform: translate(-50%, -50%);
+			width: 700px;
+			height: 800px;
+			padding: 150px 50px;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		/*.login-form h4 {
+			margin: 0;
+			padding: 0 0 0px;
+			color: #f0ffff;
+			text-align: center;
+			text-transform: uppercase;
+			font-family: 'Times New Roman', serif;
+
+		}*/
+		.login-form p {
+			margin: 0;
+			padding: 0;
+			font-weight: bold;
+			color: #fff;
+		}
+		/*.login-form input {
+			width: 100%;
+			margin-bottom: 20px;
+		}*/
+		.login-form select {
+			border: none;
+			border-bottom: 1px solid #fff;
+			background: transparent;
+			outline: none;
+			height: 40px;
+			color: #fff;
+			font-size: 16px;
+			/*width: 100%;
+			margin-bottom: 20px;*/
+		}
+		.login-form input {
+			border: none;
+			border-bottom: 1px solid #fff;
+			background: transparent;
+			outline: none;
+			height: 40px;
+			color: white;
+			font-size: 16px;
+		}
+		.login-form form-group {
+			color: lightblue;
+		}
+		.login-form button[type=submit] {
+			height: 40px;
+			color: #fff;
+			font-size: 20px;
+			background: red;
+			cursor: pointer;
+			border-radius: 25px;
+			border: none;
+			outline: none;
+			margin-top: 10%;
+		}
+
+		/*.login-form a {
+			height: 20px;
+			color: lightblue;
+			font-size: 20px;
+			background: red;
+			cursor: pointer;
+			border-radius: 0;
+			border: none;
+			outline: none;
+			margin-top: 15%;
+		}*/
+		.divider{
+			width: 350px;
+			height: auto;
+			display: inline-block;
+		}	
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+		<a class="navbar-brand" style="font-size: 30px; text-align: center; color: lightskyblue; font-family: 'Times New Roman', serif" href="#">Portion Tracker</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/" style="font-size: 25px; text-align: center; color: white; font-family: 'Times New Roman', serif">Home <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="login-form">
+		<!-- <div class="container">
+			<div class="col-sm-6 autocenter"> -->
+				<!-- <div class="card">
+					<div class="card-header"> -->
+						<h4  style="font-size: 30px; color: floralwhite ; text-align: center; text-transform: uppercase; font-family: 'Times New Roman', serif">Admin</h4>
+						<br>
+						<br>
+					<!-- </div> -->
+					<!-- <div class="card-body"> -->
+						<form action="/login_admin" method="post" class="needs-validation" novalidate>
+							<div class="form-group">
+								<label for="email" style="color: white; font-size: 20px">Email address:</label>
+								<input style="color: white; background: transparent;" type="email" class="form-control" placeholder="Enter email" name="email" id="email" required>
+								<div class="invalid-feedback">Please fill valid email address.</div>
+							</div>
+							<br>
+							<br>
+							<div class="form-group">
+								<label for="password" style="color: white; font-size: 20px">Password:</label>
+								<input style="color: white; background: transparent;" type="password" class="form-control" placeholder="Enter password" name="password" id="password" required>
+								<div class="invalid-feedback">Please fill out this field.</div>
+							</div>
+							<button type="submit" class="btn btn-primary">Log In</button>
+							<br>
+							<br>
+						</form>
+					<!-- </div> -->
+				<!-- </div> -->
+			<!-- </div> -->
+		<!-- </div> -->
+	</div>
+<%- include('footer'); -%>

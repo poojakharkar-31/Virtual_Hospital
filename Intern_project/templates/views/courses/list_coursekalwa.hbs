@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Portion Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body:before {
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image: url(https://startcenteromaha.org/wp-content/uploads/2014/12/courses-background.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            filter: blur(0px);
+        }
+        .addOrEdit_course-form {
+
+            position: absolute;
+            top: 170%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            width: 1600px;
+            height: 1450px;
+            padding: 10px 170px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .addOrEdit_course-form h3 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #f0ffff;
+            /*  text-align: center;*/
+            font-size: xx-large;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .addOrEdit_course-form h4 {
+            margin: 0;
+            padding: 100px 20px;
+            color: #f0ffff;
+            text-align: center;
+            font-size: xx-large;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .addOrEdit_course-form h1 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #f0ffff;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .addOrEdit_course-form p {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        .addOrEdit_course-form input {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        /*.addOrEdit_course-form input[type=name] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+            }*/
+            .addOrEdit_course-form label {
+                color: #ffffff;
+            }
+            .addOrEdit_course-form th {
+                color: #ffffff;
+                width: auto !important;
+            }
+            .addOrEdit_course-form td {
+                color: #ffffff;
+                width: auto !important;
+            }
+            /*.addOrEdit_course-form table {
+                color: #ffffff;
+                width: 100%
+                margin-left: auto;
+                margin-right: auto;
+    
+                }*/
+                .addOrEdit_course-form button[type=submit] {
+                    height: 30px;
+                    color: #fff;
+                    font-size: 15px;
+                    background: red;
+                    cursor: pointer;
+                    border-radius: 25px;
+                    border: none;
+                    outline: none;
+                    margin-top: 15%;
+                }
+                .addOrEdit_course-form a {
+                    height: 30px;
+                    color: #fff;
+                    font-size: 15px;
+                    background: red;
+                    cursor: pointer;
+                    border-radius: 25px;
+                    border: none;
+                    outline: none;
+                    margin-top: 15%;
+                }
+                .divider{
+                    width: 350px;
+                    height: auto;
+                    display: inline-block;
+                }
+                .image-stack {
+                    position: relative;
+                    left: 15%;
+                    top:0;
+                    width: 50%;
+                    padding: 100px 0px;
+                }
+                .image-stack__item--top{
+                    potition: absolute;
+                    
+                    width:50%;
+                }
+            </style>
+        </head>
+
+        <body class="bg-info">
+            <nav class="navbar navbar-expand-lg navbar-transparent" style="background: rgba(0, 0, 0, 0.5);">
+              <a class="navbar-brand" style= " color: white; font-size: 30px; font-family: 'Times New Roman', serif;" href="#">Portion Tracker</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link"  style= " color: white; font-size: 20px; font-family: 'Times New Roman', serif;" href="/profile_kalwa">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  style= " color: white; font-size: 20px; font-family: 'Times New Roman', serif;" href="/students_kalwa">Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"   style= " color: white; font-size: 20px; font-family: 'Times New Roman', serif;" href="/courses_kalwa">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  style= " color: white; font-size: 20px; font-family: 'Times New Roman', serif;" href="/teachers_kalwa">Teachers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  style= " color: white; font-size: 20px; font-family: 'Times New Roman', serif;" href="/lectures_kalwa">Lectures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  style= " color: red; font-size: 20px; font-family: 'Times New Roman', serif;" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+            <div class="image-stack">
+                <div class="image-stack__item image-stack__item--top">
+                 <!--  <img src="/courses/courses_image.jpg" width=1000 heigth=1000> -->
+                 <img src="https://www.minia.edu.eg/images/phedu/courses.jpg" width=1000 heigth=1000>
+                 <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwNIZQRt0LmZ3Op7tUbloGQR7E9Frx98qGSNlNGh2uFgTbz2_rWOYeQSxgLwkjOwEOalw&usqp=CAU" width=1000 heigth=1000> -->
+                 <!-- <img src="https://cache.careers360.mobi/media/article_images/2020/4/23/Professional-courses-after-graduation.jpg" width=1000 heigth=1000> -->
+                 <!-- <img src="https://media.salon.com/2019/05/sale_19347_primary_image.jpg" width=1000 heigth=1000> -->
+             </div>
+
+         </div>
+         <div class="addOrEdit_course-form">
+            <h4>List of Courses</h4>
+            <div class="row">
+             <!--  <div class="col-md-3"> -->
+                <h3><a  class="btn btn-secondary" href="/courses_kalwa"><i class="fa fa-plus"></i> Add New  </a></h3>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th style="color: #ff9999;">Course Name</th>
+                            <th style="color: #ff9999;">Chapter 1</th>
+                            <th style="color: #ff9999;">Chapter 2</th>
+                            <th style="color: #ff9999;">Chapter 3</th>
+                            <th style="color: #ff9999;">Chapter 4</th>
+                            <th style="color: #ff9999;">Chapter 5</th>
+                            <th style="color: #ff9999;">Chapter 6</th>
+                            <th style="color: #ff9999;">Course Fees</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each list_course}}
+
+                        <tr>
+                            <td><i style="color: lightblue; font-family: 'Times New Roman', serif;"><font size="5">{{this.Course_name}}</font></i></td>
+                            <td>{{this.Chapter_1}}</td>
+                            <td>{{this.Chapter_2}}</td>
+                            <td>{{this.Chapter_3}}</td>
+                            <td>{{this.Chapter_4}}</td>
+                            <td>{{this.Chapter_5}}</td>
+                            <td>{{this.Chapter_6}}</td>
+                            <td>{{this.Course_fees}}</td>
+                            <td>
+                                <a href="/courseupdatekalwa?id={{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                                <br>
+                                <br>
+                                <a href="/courseskalwa/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+
+                        {{/each}}
+
+                    </tbody>
+                </table>
+
+                
+            </div>
+
+
+        </body>
+
+        </html>

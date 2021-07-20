@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portion Tracker</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: 'Poppins', sans-serif;
+	}
+	body:before {
+		content: '';
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		
+		/*background-image: url(https://laboriousbeesgroup.files.wordpress.com/2011/05/974704375_brand-manager.jpg);*/
+		
+		background-image: url(https://imgscf.slidemembers.com/docs/1/1/634/polygon_background_business_powerpoint_presentation_video_633407.jpg);
+		background-position: right;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		-webkit-background-size: cover;
+		background-size: cover;
+		-webkit-filter: blur(0px);
+		-moz-filter: blur(0px);
+		filter: blur(0px);
+	}
+	.login-form {
+		position: absolute;
+		top: 60%;
+		left: 24%;
+		transform: translate(-50%, -50%);
+		width: 750px;
+		height: 950px;
+		padding: 130px 70px;
+
+		background-image: url(https://images.squarespace-cdn.com/content/v1/5d70072e787fd700010d8620/1567626460482-RH95ASL9Q0B2V2R648DW/ke17ZwdGBToddI8pDm48kDVYnQx84rzrm2qQOUd7Sy17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UY8mqlSYPG-nmIUWpJc006SuQyuTTLGA4klG9-z6Yewc3-7Z7Bn97rMKff5yJsS8Lw/XD.jpg?format=2500w);
+		/*background-image: url(https://image.freepik.com/free-vector/modern-grey-polygonal-technology-background_1035-7560.jpg);*/
+		/*background: rgba(0, 0, 0, 0.5);*/
+	}
+	.login-form h4 {
+		margin: 10;
+		padding: 0 0 20px;
+		color: #191970;
+		/*color: #f0ffff;*/
+		text-align: center;
+		text-transform: uppercase;
+		font-family: 'Times New Roman', serif;
+		font-size: 35px;
+
+	}
+	.login-form p {
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+		color: #fff;
+	}
+	.login-form input {
+		border: none;
+		border-bottom: 1px solid darkblue;
+		background: transparent;
+		outline: none;
+		height: 40px;
+		color: white;
+		font-size: 16px;
+	}
+	.login-form form-group {
+		color: lightblue;
+	}
+	.login-form button[type=submit] {
+		height: 40px;
+		color: #fff;
+		font-size: 20px;
+		text-align: center;
+		background: darkred;
+		cursor: pointer;
+		border-radius: 25px;
+		border: none;
+		outline: none;
+		margin-top: 5%;
+	}
+
+	.login-form a {
+		height: 20px;
+		color: darkblue;
+		font-size: 20px;
+		margin-top: 15%;
+	}
+	.divider{
+		width: 350px;
+		height: auto;
+		display: inline-block;
+	}	
+</style>
+</head>
+<body>
+
+
+
+	<% if(responseMessage=='exists'){ %>
+	<!-- The Modal -->
+	<div class="modal" id="errorModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Error</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<h4>An account with same email address already exists.</h4>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#errorModal").modal();
+	</script>
+	
+	<% }  %>
+	<div class="login-form">
+		<h4>New Registration for Class Manager</h4>
+		<form action="/register" id="register" method="post" class="needs-validation" novalidate>
+			<div class="form-group">
+				<label style="color: darkslategray; font-size: 25px; font-family: 'Times New Roman', serif;" for="username">Name:</label>
+				<input style="color: black; background: transparent" type="text" class="form-control" placeholder="Enter username" name="username" id="username" required>
+				<div class="invalid-feedback">Please fill valid Username.</div>
+			</div>
+			<div class="form-group">
+				<label style="color: darkslategray; font-size: 25px; font-family: 'Times New Roman', serif;" for="email">Email address:</label>
+				<input style="color: black; background: transparent" type="email" class="form-control" placeholder="Enter email" name="email" id="email" required>
+				<div class="invalid-feedback">Please fill valid email address.</div>
+			</div>
+			<div class="">
+				<label style="color: darkslategray; font-size: 25px; font-family: 'Times New Roman', serif;" for="password">Password:
+					<input style="color: black; background: transparent" type="password" class="form-control" placeholder="Enter Password" name="password" id="password" onkeyup= "register();" required>
+				</label>
+				<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+
+			<div class="form-group">
+				<label style="color: darkslategray; font-size: 25px; font-family: 'Times New Roman', serif;" for="password">Confirm Password:
+					<input style="color: black; background: transparent" type="password" class="form-control" placeholder="Retype password" name="confirm_password" id="confirm_password" onkeyup= "register();" required>
+					<span id='message'></span>
+				</label>
+				<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+
+			<div class="form-group">
+				<label style="color: darkslategray; font-size: 25px; font-family: 'Times New Roman', serif;" for="phone">Contact No.:</label>
+				<input style="color: black; background: transparent" type="tel" class="form-control" placeholder="Enter Contact number" name="phone" id="phone" required>
+				<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+			<div class="form-group">
+				<label style="color: darkslategray; font-size: 25px; font-family: 'Times New Roman', serif;" for="branch">Branch:</label>
+				<select name="branch" id="branch">
+					<option value="Thane">Thane</option>
+					<option value="Kalwa">Kalwa</option>
+					<option value="Kalyan">Kalyan</yanoption>
+						<option value="Vashi">Vashi</option>
+						<option value="Panvel">Panvel</option>
+					</select>
+					<div class="invalid-feedback">Please select branch.</div>
+				</div>
+
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<br>
+				<br>
+				<a href="/login_cm">Already have an account? Log In.</a>
+
+
+			</form>
+		</div>
+
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+			<a class="navbar-brand" style="font-size: 30px; text-align: center; color: black ; font-family: 'Times New Roman', serif" href="#">Portion Tracker</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/" style="font-size: 20px; text-align: center; color: white; font-family: 'Times New Roman', serif">Home <span class="sr-only">(current)</span></a>
+					</li>&nbsp&nbsp&nbsp&nbsp
+
+					<li class="nav-item active">
+						<a class="nav-link" href="/login_cm" style="font-size: 20px; text-align: center; color: white; font-family: 'Times New Roman', serif">Log In <span class="sr-only">(current)</span></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<script type="text/javascript">
+			function register() {
+				if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
+					document.getElementById('message').style.color = 'green';
+					document.getElementById('message').innerHTML = 'matching';
+
+				}else{
+          					// document.getElementById('message').style.color = '#E77471';
+          					document.getElementById('message').style.color = 'red';
+          					document.getElementById('message').innerHTML = 'not matching';
+          				}			
+          			}
+
+          		</script>
+          	</div>
+          </div>
+      </div>
+
+      <script>
+// Disable form submissions if there are invalid fields
+(function() {
+	'use strict';
+	window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+    	form.addEventListener('submit', function(event) {
+    		if (form.checkValidity() === false) {
+    			event.preventDefault();
+    			event.stopPropagation();
+    		}
+    		form.classList.add('was-validated');
+    	}, false);
+    });
+}, false);
+})();
+</script>
+</body>
+</html>

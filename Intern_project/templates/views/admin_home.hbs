@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Portion Tracker</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body:before {
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+           /* background-image: url(https://image.freepik.com/free-photo/woman-typing-keyboard-laptop-account-login-screen-working-office-table-background-safety-concepts-about-internet-use_2034-1339.jpg);*/
+            background-image: url(https://wallpaperaccess.com/full/4755970.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            filter: blur(0px);
+        }
+        .admin-form {
+
+            position: absolute;
+            top: 170%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            width: 1600px;
+            height: 2500px;
+            padding: 10px 170px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .admin-form h3 {
+            margin: 5%;
+            padding: 0 0 0px;
+            color: #f0ffff;
+            /*  text-align: center;*/
+            font-size: xx-large;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .admin-form h4 {
+            margin: 10;
+            padding: 10px 20px;
+            color: white;
+            text-align: center;
+            font-size: xx-large;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .admin-form h1 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #f0ffff;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .admin-form p {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        .admin-form input {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .admin-form label {
+            color: #ffffff;
+        }
+        .admin-form th {
+            color: #ffffff;
+            width: auto !important;
+        }
+        .admin-form td {
+            color: #ffffff;
+            width: auto !important;
+        }
+        /*.admin-form button[type=submit] {
+            height: 30px;
+            color: #fff;
+           
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 15%;
+        }*/
+        .admin-form button {
+            height: 40px;
+            color: black;
+            font-family: 'Times New Roman', serif;
+            font-size: 25px;
+            background: lightblue;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            margin-top: 2%;
+        }
+        .divider{
+            width: 100px;
+           /* height: auto;*/
+            display: inline-block;
+        }
+        .image-stack {
+            position: relative;
+            left: 15%;
+            top:0;
+            width: 50%;
+            padding: 100px 0px;
+        }
+        .image-stack__item--top{
+            position: absolute;
+
+            width:50%;
+        }
+    </style>
+</head>
+
+<body class="bg-info">
+
+   <!--  https://lms.su.edu.pk/storage/uploads/1588259447-f5952a80525d8c74acff57323b33cfaec6cf4650.jpg -->
+
+   <!--  {{>navbar}} -->
+   <!--  <div class="image-stack"> -->
+       <!--  <div class="image-stack__item image-stack__item--top">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPmD9YKxLr9dVI0qjtV0Rzw7oLxr7eBxm63A&usqp=CAU" width=200 heigth=50>
+       </div> -->
+       <!-- <div class="image-stack__item image-stack__item--top">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1GdgFs2UN5qOk0PSrkO7r6d9SPpmep0_tbw&usqp=CAU" width=200 heigth=50>
+       </div>
+ -->
+   <!--  </div> -->
+    <div class="admin-form">
+        <h4>Welcome</h4>
+
+        <h3>Branch</h3>
+        <div class="divider"></div>
+        <button class="btn btn-secondary" onclick="location.href='/Thane'" ><i>Thane</i></button>
+        <br>
+        <div class="divider"></div>
+        <button class="btn btn-secondary" onclick="location.href='/Kalwa'" ><i>Kalwa</i></button>
+        <br>
+        <div class="divider"></div>
+        <button class="btn btn-secondary" onclick="location.href='/Vashi'" ><i>Vashi</i></button>
+        <br>
+        <div class="divider"></div>
+        <button class="btn btn-secondary" onclick="location.href='/Kalyan'" ><i>Kalyan</i></button>
+        <br>
+        <div class="divider"></div>
+        <button class="btn btn-secondary" onclick="location.href='/Panvel'" ><i>Panvel</i></button>
+
+    </div>
+</body>
