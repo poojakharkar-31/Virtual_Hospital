@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploading</title>
+</head>
+<style type="text/css">
+   button {
+    margin-left: 45%;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    background: darkred;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+        /*margin-top: 5%;
+    */    }
+</style>
+<body>
+    <h1 style="font-size: 40px; color: darkblue; text-align: center;">Reports</h1>
+    <div>
+        <form action="/reports" method="POST" enctype="multipart/form-data">
+            <div>
+                <% items.forEach(function(item){ %>
+                <% if (item.status=="Approved") { %>
+                <input type="text" class="form-control" name="name" value="<%=item.username %> To <%=item.doctor %>" id="name" disabled="">
+                <% } %>
+                <% }) %>
+            </div>
+            <div style="font-size: 30px; color: black; text-align: center;">
+                <label for="desc">Report Description</label>
+                <textarea style="text-align: center; margin: 0px; width: 924px; height: 30px;" id="desc" name="pesc" value="" rows="2" placeholder="Description" required="">
+            </textarea>
+        </div>
+        <br>
+        <br>
+
+        <div style="font-size: 30px; color: black; text-align: center;">
+            <label for="image">Upload Image</label>
+            <input type="file" id="image"
+            name="image" value="" required>
+        </div>
+        <br>
+        <br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        <br>
+        <br>
+    </form>
+</div>
+
+
+
+<div>
+    <% items.forEach(function(image) { %>
+    <div>
+        <div>
+            <img src="data:image/<%=image.img.contentType%>;base64,
+            <%=image.img.data.toString('base64')%>" style="width: 1000px; height: 1400px; margin-left: 200px;" >
+            <div>
+                <h5><%= image.name %></h5>
+                
+                
+                
+                <p><%= image.desc %></p>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</div>
+</body>
+
+</html>

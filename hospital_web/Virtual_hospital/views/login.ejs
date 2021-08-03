@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log In</title>
+	<meta charset="UTF-8">
+	
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="css/style.css">
+	
+	
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+		body{
+			margin-top: 50px;
+			background-color: #f0f0f0;
+		}
+		
+		.autocenter{
+			float: none;
+			margin: auto;
+		}		
+	</style>
+<html>
+	<body>
+		<style>
+			.card{
+			padding: 10px;
+			background-color:rgba(112, 110, 110, 0);
+			padding:40px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.582);
+			font-family: "Times New Roman", Times, serif;
+			
+  border: 1px solid black;
+		}
+			body {
+    background-image: url('https://media.istockphoto.com/photos/man-using-mobile-smart-phone-with-global-network-connection-and-picture-id1274394138?b=1&k=6&m=1274394138&s=170667a&w=0&h=nhtE4UPYkYnyWENt27cLPgUUnRjldT7JyF3mnJ3re5w=');
+	background-repeat: no-repeat;
+	height: 450px; /* You must set a specified height */
+  background-position:top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    color: #000000;
+	
+}
+
+a {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
+.password-show-card{
+	position: relative
+}
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:300,400|Oswald:400,700');
+
+.password-show-card .input-control{
+	width: 100%;
+	height: 40px;
+	background: #fff;
+	border: 1px solid #eee;
+	box-shadow: 0px 0px 2px #eee;
+	padding: 6px 12px;
+	font-size: 14px;
+	color: #333333
+}
+
+.password-show-card .input-control:focus{
+border: 1px solid #66afe9;
+}
+
+.password-show-card .password-show{
+position: absolute;
+top: 12px;
+right: 12px;
+cursor: pointer;
+}
+.card-header{
+	text-align: center;
+
+}
+.card-body{
+	font-size: 25px;
+
+}
+.btn {
+                    height: 50px;
+                    color: rgb(255, 255, 255);
+                    font-family: 'Times New Roman', ;
+                    font-size: 20px;
+                    background: rgb(12, 13, 14);
+                    cursor: pointer;
+                    border-radius: 100px;
+                    border: none;
+                    outline: none;
+                    margin-top: 1%;
+					
+                }
+				.modal-header{
+		color: rgb(255, 0, 0);
+	}
+	/* .button{
+		color: rgb(255, 0, 0);
+	} */
+		</style>
+	</body>
+</html>
+
+	<!-- for include "-" is important after and before % -->
+	<% if(responseMessage=="wrong"){ %> 
+		<!-- The Modal -->
+		<div class="modal" id="errorModal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h4 class="modal-title">Error</h4>
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		      </div>
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        <h4>Invalid Credentials. Please try again.</h4>
+		      </div>
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+		<script type="text/javascript">
+			$("#errorModal").modal();
+		</script>
+	<% }  %>
+	<div class="container">
+		<div class="col-sm-6 autocenter">
+			<div class="card">
+				<div class="card-header">
+					<h4 style="font-size:3vw" >Log In</h4>
+				</div>
+				<div class="card-body">
+					<form action="/login" method="post" class="needs-validation" novalidate autocomplete="off">
+					  <div class="form-group">
+					     <label for="email">Email address:</label>
+					     <input type="email" class="form-control" placeholder="Enter email" name="email" id="email" required>
+					     <div class="invalid-feedback">Please fill valid email address.</div>
+					  </div>
+					  <div class="password-show-card">
+					    <label for="password">Password:</label>
+					    <input type="password" class="input-control" placeholder="Enter password" name="password" id="password" required>
+						<i class="fa fa-eye password-show"></i>
+		   		        <div class="invalid-feedback">Please fill out this field.</div>
+					  </div>
+					  <script src="js/jquery-latest.min.js"></script>
+							<script>
+								$(function(){
+									$(".password-show").click(function(event) {
+										$(this).toggleClass('fa-eye-slash');
+										var x = $(".input-control").attr("type"); //getting attribute in variable
+										if (x == "password") 
+										{
+											$(".input-control").attr("type","text"); //setting attribute on condition
+										}
+										else
+										{
+											$(".input-control").attr("type","password");
+										}
+									});
+								})
+							</script>
+							<br>
+					  <button type="submit" class="btn btn-primary">Submit</button>
+					  <br>
+					  <br>
+					  <a href="/forgot-password">Forgot Password...?Click Here</a>
+					  <br>
+					  <br>
+					  <a href="/register">Don't have an account? Create One.</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<%- include('footer'); -%>

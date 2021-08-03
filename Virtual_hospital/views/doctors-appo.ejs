@@ -1,0 +1,66 @@
+<%- include('header'); -%>
+<style>
+	.card{
+			padding: 10px;
+			background-color:rgba(0,0,0,0.5);
+			padding:40px;
+			box-shadow: 0 0 10px #000;
+			
+		}
+	/* .body{
+		font-family:poppins;
+
+	}	 */
+	body {
+    background-image: url('https://s3.ap-southeast-1.amazonaws.com/cdn.deccanchronicle.com/sites/default/files/doctor_china-copy_0_0_0_0_0.jpg');
+	background-repeat: no-repeat;
+	height: 600px; /* You must set a specified height */
+  background-position:top; /* Center the image */
+  /* background-repeat: no-repeat; */
+  background-size: cover; 
+    color: #ffffff;
+	/* filter:blur(2px); */
+	content:"";
+	position:"fixed";
+	display:block;
+}
+</style>
+	<div class="container">
+		<div class="col-sm-6 autocenter">
+			<div class="card">
+				<div class="card-header">
+					<h4>Appointment Status</h4>
+				</div>
+				<div class="card-body">
+					<div class="list-group">
+						<form action="/doctors-appo" method="Post">
+						
+						<div class="form-group">
+                            <label for="doctor">Doctor:</label>
+                            <select class="form-group" name="doctor" id="doctor"  required >
+                                <option value="">select</option>
+                                <% doctorlist.forEach(function(item){%>
+                                    <option ><%=item.name_doctor %></option>
+                                <%})%>
+                            </select>
+                            <div class="invalid-feedback">Please fill valid field.</div>
+                         </div>
+						 
+						 <button type="submit" class="btn btn-primary">Search</button>
+						 <br>
+						 <br>
+						 <button class="btn btn-primary" onclick="location.assign('/profile_admin')">Profile Admin</button>
+						 <br>
+						 <br>
+						 <button class="btn btn-primary" onclick="location.assign('/logout_admin')">Log Out</button>
+
+						</form>
+						
+					</div>
+					<br>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+<%- include('footer'); -%>

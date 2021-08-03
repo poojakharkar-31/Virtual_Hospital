@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portion Tracker for Coders</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style type = "text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.sub-header{
+		height: 50vh;
+		width: 100%;
+		/*background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://www.stylemotivation.com/wp-content/uploads/2018/05/img773537-620x369.jpg);*/
+		background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://www.focushealthcare.in/assets/img/online-course.jpg);
+		background-position: center;
+		background-size: cover;
+		text-align: center;
+		color: #fff;
+	}
+	.sub-header h1{
+		margin-top: -40px;
+	}
+
+	nav{
+		display: flex;
+		padding: 2% 6%;
+		justify-content: space-between;
+		align-items: center;
+
+	}
+	nav img{
+		width: 150px;
+	}
+	.nav-links{
+		flex: 1;
+		text-align: right;
+	}
+	.nav-links ul li{
+		list-style: none;
+		display: inline-block;
+		padding: 8px 12px;
+		position: relative;
+	}
+	.nav-links ul li a{
+		color: #fff;
+		text-decoration: none;
+	}
+	.nav-links ul li::after{
+		content: '';
+		width: 0%;
+		height: 2px;
+		/*background: #f44336;*/
+		/*background: #ff9999;*/
+		background: lightpink;
+		display: block;
+		margin: auto;
+		transition: 0.5s;
+	}
+	.nav-links ul li:hover::after{
+		width: 100%;
+	}
+	.text-box{
+		width: 90%;
+		color:  #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+	.text-box h1{
+		font-size: 62px;
+	}
+	.text-box p{
+		margin: 10px 0 40px;
+		font-size: 18px;
+		color: #fff3f3;
+
+	}
+	.hero-btn{
+		display: inline-block;
+		text-decoration: none;
+		color: #fff;
+		border: 1px solid #fff;
+		padding: 12px 24px;
+		font-size: 20px;
+		background: transparent;
+		position: relative;
+		cursor: pointer;
+	}
+	.hero-btn:hover{
+		border: 1px solid lightblue;
+		background: lightblue;
+		transition: 0.5s;
+		color: black;
+	}
+
+	/*---------------------------course-------------------------*/
+	.course{
+		width: 70%;
+		margin: auto;
+		text-align: center;
+		padding-top: 100px;
+	}
+
+	h1{
+		font-size: 36px;
+		font-weight: 600;
+
+	}
+	p{
+		color: black;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 22px;
+		padding: 10px;
+	}
+	.row1{
+		margin-top: 5%;
+		display: flex;
+		justify-content: space-between;
+	}
+	.row2{
+		margin-top: 5%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.course-col{
+		flex-basis: 25%;
+		/*background: #fff3f3;*/
+		/*background: #f0f8ff;*/
+		background: #bcd2ee;
+		border-radius: 10px;
+		margin-bottom: 5%;
+		padding: 50px 12px;
+		box-sizing: border-box;
+		transition: 0.5s;
+	}
+
+	h3{
+		text-align: center;
+		font-weight: 600;
+		margin: 10px 0;
+	}
+	.course-col:hover{
+		box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+	}
+	img{
+		width: 40%;
+		height: 40%;
+	}
+
+	/*------------------------------------feedback ----------------------------------*/
+
+	.feedback{
+		width:  70%;
+		margin: auto;
+		padding-top: 100px;
+		text-align: center;
+	}
+	.row{
+		margin-top: 5%;
+		display: flex;
+		justify-content: space-between;
+	}
+	.feedback-col{
+		flex-basis: 44%;
+		border-radius: 10px;
+		margin-bottom: 5%;
+		text-align: left;
+		background: #fff3f3;
+		padding: 25px;
+		cursor: pointer;
+		display: flex;
+	}
+	.feedback-col img{
+		padding: center ;
+		height: 60px;
+		width: 60px;
+		margin-left: 5px;
+		margin-right: 30px;
+		border-radius: 50%;
+	}
+	.feedback-col:hover{
+		box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+	}
+	.feedback-col p{
+		padding: 0;
+	}
+	.feedback-col h3{
+		margin-top: 15px;
+		text-align: left;
+	}
+	.feedback-col .fa{
+		color: red;
+	}
+
+	
+
+</style>
+</head>
+<body>
+	<section class="sub-header">
+		<nav>
+			<a href="mainpage.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDXygjKINSta6A_AeDOg3cLbldmsfWOGtum57FNKGyoXdwN6DZ1rRUgNe_2kLvLBaChj4&usqp=CAU"></a>
+			<div class="nav-links">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li><a href="/course">COURSE</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+					<li><a href="/login_admin">ADMIN</a></li>
+					<li><a href="/login_cm">CLASS MANAGER</a></li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+
+<!-- 	---------------COURSE----------------- -->
+	<section class="course">
+		<h1>Courses We Offer</h1>
+		<p style="font-size: 20px; font-family: 'Times New Roman', serif;">And many more to come</p>
+
+		<div class="row1">
+			<div class="course-col">
+				<!-- <img style="width:40%; height:40%" src="https://www.101computing.net/wp/wp-content/uploads/python-logo-1.png"> -->
+				<h3>Python</h3>
+				
+				<p>Includes Basics and Intermediate Python Programming & also learning project at intermediate level</p>
+			</div>
+			<div class="course-col">
+				<!-- <img style="width: 50%; height: 40%;" src="https://www.techmindz.com/wp-content/uploads/2021/03/MERN.jpg"> -->
+				<h3>MERN Stack</h3>
+				
+				<p>Full Course on Mongodb Express React NodeJS along with project</p>
+			</div>
+			<div class="course-col">
+				<h3>C Programming</h3>
+				<p>Bringing you to C Programming from "Introduction to C programming along with algorithms and flowchart" to "File Management in C"</p>
+			</div>
+		</div>
+		<div class="row2">
+			<div class="course-col">
+				<h3>Android Development</h3>
+				<p>Starting from basics of java and ending with the Android App with lot many features</p>
+			</div>
+			<div class="course-col">
+				<h3>PHP</h3>
+				<p>Getting Started with PHP Basics and working on the Top Level PHP Project under guidance from experts</p>
+			</div>
+			<div class="course-col">
+				<h3>Machine Learning & Deep Learning</h3>
+				<p>Brushing up Machine learning & Deep Learning concepts foloowed by Working on Projects under guidance from our experts</p>
+			</div>
+		</div>
+	</section>	
+<!-- --------------------Reviews-------------------- -->
+	
+	<section class="feedback">
+		<h1>Testimonials</h1>
+		<p style="font-size: 18px; font-family: 'Times New Roman', serif;">We have ensured a premium quality Hands-on experience for students to learn,<br> access and solve any Real life Technological problems.<br><br>
+		Listen to what our students have to say...</p>
+
+		<div class="row">
+			<div class="feedback-col">
+				<img src="https://www.superprof.com/images/teachers/teacher-home-engineering-student-from-india-providing-basic-english-classes-for-speakers-other-languages.jpg">
+				<div>
+					<p>
+						Being a part of Android App Development Training and Internship program at Autodice has assisted me to hone my skills. It was a great experience! In short, this platform is the home to innovation.
+					</p>
+					<h3>Nikhil Desai</h3>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+				</div>
+			</div>
+
+			<div class="feedback-col">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4UfjMvkVnXtlT3nFggcx9IpnW1LsbZxxoaQ&usqp=CAU">
+				<div>
+					<p>
+						I was not a big fan of creating websites and dropped the idea of working with it, but during my Summer Vacations I really thought about giving this a try with this platform, all my doubts were welcomed and answered with a smile! I also learned a bit of PHP which I found very interesting. I made notes on daily basis during one to one lectures, I still refer them whenever I get stuck with some concepts.
+					</p>
+					<h3>Riya Kale</h3>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+
+
+</body>
+</html>

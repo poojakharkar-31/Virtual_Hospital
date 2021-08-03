@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make Announcements</title>
+    <!-- Using a local copy -->
+
+<!-- Include the default stylesheet -->
+<link rel="stylesheet" type="text/css" href="multiple-select.css">
+<!-- Include plugin -->
+<script src="multiple-select.js"></script>
+
+<!-- Or using a CDN -->
+
+<!-- Include the default stylesheet -->
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/wenzhixin/multiple-select/e14b36de/multiple-select.css">
+<!-- Include plugin -->
+<script src="https://cdn.rawgit.com/wenzhixin/multiple-select/e14b36de/multiple-select.js"></script>
+    
+    <link rel="stylesheet" href="/path/to/cdn/bootstrap.min.css" />
+    <script src="/path/to/cdn/jquery.min.js"></script>
+    <script src="/path/to/cdn/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+    <!-- <script type="text/javascript">
+        $(document).ready(function () {
+                $("#patient").CreateMultiCheckBox({ width: '230px',
+                defaultText : 'Select Below', height:'250px' });
+            });
+            $(function(){
+                
+                    $('#patient').multiselect();
+                
+                });
+                $(function()
+                {
+                    $(".js-example-basic-multiple").select2();
+                });
+            </script> -->
+            <style type="text/css">
+                body{
+                    margin-top: 150px;
+                    background-color: #f0f0f0;
+                }
+                
+                .autocenter{
+                    float: none;
+                    margin: auto;
+                }	
+                body {
+    background-image: url('https://st3.depositphotos.com/1031174/17776/i/600/depositphotos_177764272-stock-photo-blurred-black-background.jpg');
+	background-repeat: no-repeat;
+	height: 450px; /* You must set a specified height */
+  background-position:top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    color: #000000;
+	
+}	
+.card-header{
+    text-align: center;
+    color: #f0f0f0;
+}
+.card{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    padding: 0px;
+						background-color:rgba(0,0,0,0.5);
+						/* padding:40px; */
+						box-shadow: 0 0 10px #000;
+}
+.col-sm-6 {
+						padding: 0px;
+						background-color:rgba(172, 169, 169, 0.37);
+						/* padding:40px; */
+						box-shadow: 0 0 10px rgb(184, 170, 170);
+						
+					}
+                    .card-body{
+                        color: #f0f0f0;
+                    }
+                    
+                    
+            </style>
+            
+        </head>
+        <body>
+            
+            <div class="container">
+                <div class="col-sm-6 autocenter">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Make Announcements</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/announcements" method="post" class="needs-validation" novalidate autocomplete="off">
+                                <div class="form-group">
+                                    <label for="announcements">Announcements:</label>
+                                    <input type="announcements" class="form-control" placeholder="Enter Announcements" name="announcements" id="announcements" required>
+                                    <div class="invalid-feedback">Please fill valid email address.</div>
+                                    
+                                </div>
+                                
+                                <!-- <div class="form-group">
+                                    <label for="patient">Patient:</label>
+                                    
+                                    <select id="patient" multiple="multiple" style="width:40%" >
+                                        <option value="">select</option>
+                                        <% patientlist.forEach(function(item){%>
+                                            <option value="<%=item.username %>"><%=item.username %></option>
+                                            <%})%>
+                                        </select>
+                                       
+                                        <div class="invalid-feedback">Please fill valid field.</div>
+                                    </div> -->
+                                    <!-- <script>
+                                        // Initialize multiple select on your regular select
+                                        $("#patient").multipleSelect({
+                                            filter: true
+                                        });
+                                    </script> -->
+                                    
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('footer'); -%>

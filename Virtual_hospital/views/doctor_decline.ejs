@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to my project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+    <style type="text/css">
+        body{
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+        
+        .autocenter{
+            float: none;
+            margin: auto;
+        }		
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+        }	
+    </style>
+    <style>
+        .card{
+                padding: 10px;
+                background-color:rgba(0,0,0,0.5);
+                padding:40px;
+                box-shadow: 0 0 10px #000;
+                
+            }
+        /* .body{
+            font-family:poppins;
+    
+        }	 */
+        body {
+        background-image: url('https://image.freepik.com/free-photo/medicine-healthcare-concept-disappointed-skeptical-middle-aged-female-doctor-scrubs-approve-treatment-dislike-something-showing-thumbs-down-grimacing-displeased_1258-19430.jpg');
+        background-repeat: no-repeat;
+        height: 600px; /* You must set a specified height */
+      background-position:top; /* Center the image */
+      /* background-repeat: no-repeat; */
+      background-size: cover; 
+        color: #000000;
+        /* filter:blur(2px); */
+        content:"";
+        position:"fixed";
+        display:block;
+    }
+    </style>
+</head>
+<body>
+    <form action="/doctor_decline" method="POST" >
+        <div class="form-group">   
+            <table class="center">
+            <% patientdata.forEach(function(item){ %>
+                <thead class="thead-light">
+                    <tr>
+                        <th><i><i>Doctors Name :   </i><%=item.doctor %></i></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                
+                
+                
+                <tbody>
+                    <tr>
+                        <td><i style="color: rgb(0, 0, 0); font-family: 'Times New Roman', ; font-size: 20px">Reason Of appointment :   </i><%=item.reason %></td>
+                    </tr>
+                    <tr>
+                        <td><i style="color: rgb(0, 0, 0); font-family: 'Times New Roman', ; font-size: 20px">Date : </i><%=item.date %></td>
+                    </tr>
+                    <tr>
+                        <td><i style="color: rgb(0, 0, 0); font-family: 'Times New Roman', ; font-size: 20px">Time :   </i> <%=item.time %></td>
+                    </tr>
+                    
+                    
+                    
+                    <td>
+                        <button type="submit" class="btn btn-primary">Decline</button>
+                        <br>
+                        <br>
+
+                        
+                        </td>
+                        <% }) %>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                    </tbody>
+            </table>
+                    <script>
+                        
+                        (function() {
+                            'use strict';
+                            window.addEventListener('load', function() {
+                                // Get the forms we want to add validation styles to
+                                var forms = document.getElementsByClassName('needs-validation');
+                                // Loop over them and prevent submission
+                                var validation = Array.prototype.filter.call(forms, function(form) {
+                                    form.addEventListener('submit', function(event) {
+                                        if (form.checkValidity() === false) {
+                                            event.preventDefault();
+                                            event.stopPropagation();
+                                        }
+                                        form.classList.add('was-validated');
+                                    }, false);
+                                });
+                            }, false);
+                        })();
+                    </script>
+                </body>
+                </html>    

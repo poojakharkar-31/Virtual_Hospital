@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patient List</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    body:before {
+        content: '';
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-image: url(https://media.istockphoto.com/vectors/abstract-medical-background-with-flat-icons-and-symbols-template-vector-id1163153584?k=6&m=1163153584&s=612x612&w=0&h=aJmxoQ8xz46dnr-jONDJmQ_GAJ58nGY1xU4EgCpUtQE=);
+        /*background-image: url(https://skillshipfoundation.com/wp-home2/2020/01/learn-to-code.jpg);*/
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        filter: blur(0px);
+    }
+    .addOrEdit_course-form {
+
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1600px;
+        height: 1450px;
+        padding: 10px 10px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .addOrEdit_course-form h3 {
+        margin: 0;
+        padding: 0 0 20px;
+        color: #f0ffff;
+        /*  text-align: center;*/
+        font-size: xx-large;
+        text-transform: uppercase;
+        font-family: 'Times New Roman', serif;
+
+    }
+    .addOrEdit_course-form h4 {
+        margin: 0;
+        padding: 50px 20px;
+        color: #f0ffff;
+        text-align: center;
+        font-size: xx-large;
+        text-transform: uppercase;
+        font-family: 'Times New Roman', serif;
+
+    }
+    .addOrEdit_course-form h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        color: #f0ffff;
+        font-family: 'Times New Roman', serif;
+
+    }
+    .addOrEdit_course-form p {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+    .addOrEdit_course-form input {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+        /*.addOrEdit_course-form input[type=name] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+            }*/
+            .addOrEdit_course-form label {
+                color: #ffffff;
+            }
+            .addOrEdit_course-form th {
+                background-color: rgba(0, 0, 0, 0.4);
+                color: #ffffff;
+                width: auto !important;
+            }
+            .addOrEdit_course-form td {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: #ffffff;
+                width: auto !important;
+            }
+            /*.addOrEdit_course-form table {
+                color: #ffffff;
+                width: 100%
+                margin-left: auto;
+                margin-right: auto;
+    
+                }*/
+                .addOrEdit_course-form button[type=submit] {
+                    height: 30px;
+                    color: #fff;
+                    font-size: 15px;
+                    background: red;
+                    cursor: pointer;
+                    border-radius: 25px;
+                    border: none;
+                    outline: none;
+                    margin-top: 15%;
+                }
+                .addOrEdit_course-form a {
+                    height: 40px;
+                    color: #fff;
+                    font-size: 20px;
+                   /* background: darkblue;*/
+                    cursor: pointer;
+                    border-radius: 25px;
+                    border: none;
+                    outline: none;
+                    margin-top: 15%;
+                    }
+                    .divider{
+                        width: 350px;
+                        height: auto;
+                        display: inline-block;
+                    }
+                    .image-stack {
+                        position: relative;
+                        left: 15%;
+                        top:0;
+                        width: 50%;
+                        padding: 20px 0px;
+                    }
+                    .image-stack__item--top{
+                        potition: absolute;
+
+                        width:50%;
+                    }		
+                </style>
+            </head>
+            <body>
+
+
+                <main id="site-main">
+                    <div class="addOrEdit_course-form">
+                        <h4>List of Patients</h4>
+                        <div class="image-stack">
+                            <div class="image-stack__item image-stack__item--top">
+                               <img src="https://www.rehab-first.com/wp-content/uploads/2018/03/iStock-645455526-1170x588.jpg" width=1000 heigth=1000>
+                           </div>
+                       </div>
+                       <div class="filter" style="margin-left:20% ">
+                        <i class="fas fa-angle-double-left"></i>  <a href="doctor-profile">Back</a> 
+                    </div>
+
+                    <center>
+                        <!-- form handling -->
+
+
+                        <!-- <form action="/" method="post"> -->
+                            <table class="table" style="width:1150px; font-size: 20px;">
+                                <thead style="background-color: rgba(0,0,0,.2); font-size: 20px;">
+
+                                    <tr>
+                                        <!-- <th></th> 	 -->
+                                        <th>Name</th> 	
+                                        <th>Reason</th>	
+                                        <th>Date</th> 
+                                        <th>Time</th> 	
+                                        <th>Status</th>  
+                                        <th>Action</th>  
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% details.forEach(function(item){ %>
+                                    <% if (item.status=="Approved") { %>
+
+                                    <tr> 
+
+                                        <td><%=item.username %></td>
+                                        <td><%=item.reason %></td>
+                                        <td><%=item.date %></td>
+                                        <td><%=item.time %></td>
+                                        <td><%=item.status %></td>
+                                        <td>
+
+
+
+
+
+                                            <a href="/doctor_chat?id=<%=item._id%>">Chat
+                                                <span class="text-gradient">
+                                                    <i class="fas fa-comments"></i>
+                                                </span>
+                                            </a>
+                                        </a>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% } %>
+                            
+                            <% }) %>
+                            
+                        </tbody>
+                    </table>
+                    <!-- </form>  -->
+                    
+                    <!-- /form handling-->
+                </div>
+            </main>
+        </center>

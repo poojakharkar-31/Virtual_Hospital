@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doctor Profile</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+	<style type="text/css">
+		body{
+			margin-top: 10px;
+			background-color: #f0f0f0;
+		}
+		
+		.autocenter{
+			float: none;
+			margin: auto;
+		}		
+	</style>
+</head>
+<body>
+	
+	<!-- <div class="img-rounded" style="float: right; background-color: #f5f4ef; width: 315px; height: 260px; border: 1px solid black; margin: 10px;"> -->
+		
+		<!-- <h3 style="color: #ffffff; background-color: #0f0f0f; text-align: center; margin: 0px; padding: 0px;">Announcements</h3>
+			<p> Hospital Announcements </p>
+			<div id="cc-homepage-announcements" style="height: 200px; overflow-x: hidden; overflow-y: auto; padding: 6px; text-align: left;"> </div> -->
+			
+			<html>
+			<body>
+				<style type="text/css">
+					
+					.card{
+						padding: 0px;
+						background-color:rgba(0,0,0,0.5);
+						/* padding:40px; */
+						box-shadow: 0 0 10px #000;
+						
+					}
+					.list-group{
+						padding: 0px;
+						background-color:rgba(0,0,0,0.5);
+						/* padding:40px; */
+						box-shadow: 0 0 10px #000;
+						
+					}
+					.card-header{
+						padding: 10px;
+						background-color:rgba(136, 135, 135, 0);
+						/* padding:40px; */
+						box-shadow: 0 0 10px #000;
+						color: #000000;
+						text-align: center;
+						
+					}
+					.card-body{
+						padding: 0px;
+						background-color:rgba(172, 169, 169, 0.048);
+						/* padding:40px; */
+						box-shadow: 0 0 10px rgb(184, 170, 170);
+						
+					}
+					.col-sm-6 {
+						padding: 0px;
+						background-color:rgba(172, 169, 169, 0.37);
+						/* padding:40px; */
+						box-shadow: 0 0 10px rgb(184, 170, 170);
+						
+					}
+					.container{
+						padding: 0px;
+						font-family: "Times New Roman", Times, serif;
+						
+					}
+					.list-group-item {
+						padding: 10px;
+						background-color:rgba(53, 47, 47, 0.116);
+						/* padding:40px; */
+						box-shadow: 0 0 10px rgb(184, 170, 170);
+						color: #ffffff;
+						
+					}
+					/* .btn  {
+						background-color: #ffffff50;
+						color: #000000;
+						border-radius: 30%;
+					} */
+					.btn:hover {
+						background-color: #ffffff50;
+						color: white;
+					}
+					
+					/* .body{
+						font-family:poppins;
+						
+					}	 */
+					body {
+						background-image: url('https://clinicalskillspro.com/wp-content/uploads/2015/06/facebook-cover-photo.jpg');
+						background-repeat: no-repeat;
+						height: 500px; /* You must set a specified height */
+						background-position:center; /* Center the image */
+						/* background-repeat: no-repeat; */
+						background-size: cover; 
+						color: #000000;
+						/* filter:blur(2px); */
+						content:"";
+						position:"fixed";
+						display:block;
+					}
+					/* a {
+						background-color: rgb(0, 89, 255);
+						color: white;
+						padding: 1em 1em;
+						text-decoration:underline;
+						text-transform: uppercase;
+					} */
+					/* a {
+						display:table;
+						height: 20px;
+						width: auto;
+						border: 1px solid rgb(224, 217, 217);
+					} */
+					a {
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						border-radius: 4px;
+						border: solid 1px #20538D;
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+						-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						background: #3967cc;
+						color: #FFF;
+						padding: 8px 12px;
+						text-decoration: none;
+						background-color: #ffffff50;
+						color: #000000;
+						border-radius: 30%;
+						background-color: #ffffff50;
+						color: rgb(0, 0, 0);
+						
+					}
+					.btn {
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						border-radius: 4px;
+						border: solid 1px #20538D;
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+						-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						background: #3967cc;
+						color: #FFF;
+						padding: 8px 12px;
+						text-decoration: none;
+						background-color: #ffffff50;
+						color: #000000;
+						border-radius: 30%;
+						
+						
+						
+					}
+					/* .aheader{
+						display: block;
+						width: 500px;
+						height: 500px;
+						background: #5e5e5e;
+					} */
+					.announce{
+						position: absolute;
+						top: 10px;
+						right: 19px;
+						font-size: 20px;
+						font-family: "Times New Roman", Times, serif;
+					}
+				</style>
+			</body>
+			</html>
+		</div>
+		<% if(responseMessage=="no_appointment"){ %> 
+	<!-- The Modal -->
+	<div class="modal" id="errorModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Error</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<h4>No appointment exists</h4>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#errorModal").modal();
+	</script>
+	
+	<% }  %>
+		<div class="container">
+			<div class="col-sm-6 autocenter">
+				<div class="card" style="margin-top: 20%;">
+					<div class="card-header">
+						<h4 style=" margin-top: 10%; color: white;"><b>DOCTOR PROFILE</b></h4>
+					</div>
+					<div class="card-body">
+						<div class="list-group">	
+							
+							<div class="list-group-item">
+								<label >Email: </label> <%=email_doctor; %>					
+							</div>
+							<div class="list-group-item">
+								<label>Name: </label> <%=name_doctor; %>				
+							</div>
+							<div class="list-group-item">
+								<label>Password: </label> <%=password; %>					
+							</div>
+							<div class="list-group-item">
+								<label>Mobile: </label> <%=mobile_doctor; %>					
+							</div>
+							<div class="list-group-item">
+								<label>Age: </label> <%=age_doctor; %>					
+							</div>
+							<div class="list-group-item">
+								<label>Gender: </label> <%=gender_doctor; %>					
+							</div>
+							
+							
+						</div>
+						
+						<center>
+
+							<button class="btn btn-primary" onclick="location.assign('/logout_doctor')"><b>Log Out</b></button>
+
+						</center>
+						<br>
+						
+							<a class="btn btn-primary" style="margin-left: 43%;" href="/patient-list?id=<%=userid%>">Patients
+					
+								
+								
+							</a>
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		</div>
+		
+		
+		
+		
+		<%- include('footer'); -%>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Profile</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+		body{
+			margin-top: 20px;
+			background-color: #f0f0f0;
+		}
+		
+		.autocenter{
+			float: none;
+			margin: auto;
+		}		
+	</style>
+</head>
+<body>
+<style>
+	.card{
+			padding: 20px;
+			background-color:rgba(0,0,0,0.5);
+			padding:10px;
+			box-shadow: 0 0 10px #000;
+      font-family: "Times New Roman", Times, serif;
+      right: 300px;
+
+			
+		}
+    .btn {
+                    height: 50px;
+                    color: rgb(255, 255, 255);
+                    font-family: 'Times New Roman', ;
+                    font-size: 20px;
+                    background: rgb(12, 13, 14);
+                    cursor: pointer;
+                    border-radius: 100px;
+                    border: none;
+                    outline: none;
+                    margin-top: 1%;
+					
+                }
+	/* .body{
+		font-family:poppins;
+
+	}	 */
+	body {
+    background-image: url('https://www.nuvancehealth.org/-/media/images/services/patient-portal-female-tablet-sofa.jpg?h=480&w=1170&hash=9B9F5139C11A14A324883808D9BAD3F1');
+	background-repeat: no-repeat;
+	height: 695px; /* You must set a specified height */
+  background-position:center; /* Center the image */
+  /* background-repeat: no-repeat; */
+  background-size: cover; 
+    color: #ffffff;
+	/* filter:blur(2px); */
+	content:"";
+	position:"fixed";
+	display:block;
+  padding: 0px;
+
+}
+.col-sm-6 {
+  padding: 0px;
+}
+/* .body{
+  padding:40px;
+} */
+</style> 
+ 
+ <div class="col-sm-6 autocenter">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="color: rgb(223, 222, 222);"><u>Update Patient Profile</u></h4>
+           
+        
+            <form action="/profile-edit" method="post" class="needs-validation" novalidate autocomplete="off">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                 <input type="text" class="form-control" name="username" value="<%= message.username %>" id="username" required>
+                 <div class="invalid-feedback">Please fill valid info.</div>
+                </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" name="email" value="<%= message.email %>" id="email"  required>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                 <input type="text" class="form-control" name="mobile" value="<%= message.mobile %>" id="mobile" required>
+                 <div class="invalid-feedback">Please fill valid info.</div>
+                </div>
+                <div class="form-group">
+                <label for="password">Password:</label>
+                 <input type="text" class="form-control" name="password" value="<%= message.password %>" id="password" required>
+                 <div class="invalid-feedback">Please fill valid info.</div>
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender:</label>
+                  <select class="form-group" name="gender" id="gender"  required >
+                    <option value="">select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+                  <div class="invalid-feedback">Please fill valid field.</div>
+                 </div>
+                <div class="form-group">
+                 <label for="age">Age:</label>
+                 <input type="text" class="form-control" name="age" value="<%= message.age %>" id="age" required>
+                 <div class="invalid-feedback">Please fill valid info.</div>
+                </div>
+              <button type="submit" class="btn btn-primary">Update</button>
+              <br>
+              <br>
+            </form>
+            
+            
+        </div>
+    </div>
+</div>
+</div> -->
+<!-- include footer -->
+<%- include('footer') %>

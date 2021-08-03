@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+    <style type="text/css">
+        body{
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+        
+        .autocenter{
+            float: none;
+            margin: auto;
+        }		
+        /* thead{
+            background-color: rgb(221, 160, 221);     
+        } */
+        thead {
+            background-color: #0765f186;
+            color: #ffffff;
+        }
+        tr {
+            background-color: #294f8828;
+            color: #000000;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <!-- /include header -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        
+        <main id="site-main">
+            <div class="container">
+                <div class="box-nav d-flex-justify-between">
+                    <a href="/add-doctor" class="btn-primary">
+                        <span class="text-gradient">Add Doctor  <i class="fas fa-user-plus"></i></span>
+                    </a>
+                    &nbsp; 
+                    &nbsp;
+                    <a href="/profile_admin" class="btn-primary">
+                        <span class="text-gradient">Admin Profile <i class="fas fa-user-circle"></i></span>
+                    </a>
+                    
+                </div>
+                <style>
+                    body {
+                        /* background-image: url('https://www.statnews.com/wp-content/uploads/2020/03/AdobeStock_267281335-1024x576.jpeg'); */
+                        /* background-image: url('http://pavbca.com/walldb/original/0/0/b/413051.jpg'); */
+                        background-image: url('https://districthealthcareservices.com/wp-content/uploads/2014/09/Digital-Therapeutics.png');
+                        background-repeat: no-repeat;
+                        height: 500px; /* You must set a specified height */
+                        
+                        background-position: center; /* Center the image */
+                        background-repeat: no-repeat; /* Do not repeat the image */
+                        background-size:cover;
+                        color: #2c3dcf;
+                    }
+                </style>
+                
+                <!-- form handling -->
+                <form action="/list" method="post">
+                    <table class="table"  style="width:100%">
+                        
+                        <thead>
+                            
+                            
+                            <tr>
+                                <!-- <th>ID</th> 	 -->
+                                <th>Name</th> 	
+                                <th>Specialization</th>	
+                                <th>Edit Or Delete</th>
+                                
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <% details.forEach(function(item){ %>
+                                
+                                <tr style= "width:100px">
+                                    <!-- <td><%=   1 %></td> -->
+                                    <td><%=item.name_doctor %></td>
+                                    <td><%=item.specialization %></td>
+                                    
+                                    <td>
+                                        <a href="/doctor-update?id=<%=item._id%>" class="btn border-shadow update">
+                                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                        </a>
+                                        <a  href="/doctor-delete/<%=item._id%>" class="btn border-shadow update"><class="btn border-shadow delete" data-id=<%= item._id%> >
+                                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                        </a>
+                                        
+                                    </td>
+                                </tr>
+                                <% }) %>
+                                
+                                
+                            </tbody>
+                            <!-- </table> -->
+                        </thead>
+                        
+                    </table>
+                </form> 
+                
+                <!-- /form handling-->
+                <!-- <main id="site-main">
+                    <div class="container">
+                        <div class="box-nav d-flex-justify-between">
+                            <a href="/add-Doctor" class="border-shadow">
+                                <span class="text-gradient">Add Doctor  <i class="fas fa-user-plus"></i></span>
+                            </a>
+                            
+                        </div> -->
+                        
+                        <!-- form handling -->
+                        <!-- <form action="/list" method="post">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr> -->
+                                        <!-- <th>ID</th> 	 -->
+                                        <!-- <th>Name</th> 	
+                                            <th>Specialization</th>	
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% details.forEach(function(item){ %>
+                                            <tr> -->
+                                                <!-- <td><%=   1 %></td> -->
+                                                <!-- <td><%=item.name %></td>
+                                                    <td><%=item.specilization %></td>
+                                                    <td>
+                                                        <a href="/update-user" class="btn border-shadow update">
+                                                            <span class="text-gradient">
+                                                                <i class="fas fa-user-edit"></i>
+                                                            </span>
+                                                        </a>
+                                                        <a  class="btn border-shadow delete">
+                                                            <form action="/details/<%= item.id %>?_method=DELETE" method="POST">
+                                                                <span class="text-gradient">
+                                                                    <i class="fas fa-trash-alt"></i>
+                                                                </span>
+                                                            </form>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <% }) %>
+                                                
+                                            </tbody>
+                                        </table> -->
+                                        <!-- </form>  -->
+                                        
+                                        <!-- /form handling-->
+                                        <!-- </div>
+                                        </main> -->
+                                        
+                                        <!-- /main site -->
+                                        <!-- include footer -->
+                                        <%- include('footer') %>
+                                        <!-- /include footer -->

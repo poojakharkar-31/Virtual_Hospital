@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doctor Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+		body{
+			margin-top: 50px;
+			background-color: #f0f0f0;
+		}
+		
+		.autocenter{
+			float: none;
+			margin: auto;
+		}		
+	</style>
+</head>
+<body>
+<style>
+	.card{
+		padding: 10px;
+		background-color:rgba(0,0,0,0.5);
+		padding:40px;
+		box-shadow: 0 0 10px #000;
+		
+	}
+	/* .body{
+		font-family:poppins;
+		
+	}	 */
+	body {
+		background-image: url('https://clipart.world/wp-content/uploads/2021/01/Doctors-clipart.png');
+		background-repeat: no-repeat;
+		height: 600px; /* You must set a specified height */
+		background-position:top; /* Center the image */
+		/* background-repeat: no-repeat; */
+		background-size: cover; 
+		color: #ffffff;
+		/* filter:blur(2px); */
+		content:"";
+		position:"fixed";
+		display:block;
+	}
+	.modal-body{
+		color: #000;
+	}
+	.modal-header{
+		color: #000;
+	}
+	.btn {
+                    height: 50px;
+                    color: rgb(255, 255, 255);
+                    font-family: 'Times New Roman', ;
+                    font-size: 20px;
+                    background: rgb(12, 13, 14);
+                    cursor: pointer;
+                    border-radius: 100px;
+                    border: none;
+                    outline: none;
+                    margin-top: 1%;
+					
+                }
+				a{
+					color:rgb(255, 255, 255)
+				}
+</style>
+
+<% if(responseMessage=="exists"){ %> 
+	<!-- The Modal -->
+	<div class="modal" id="errorModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Error</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<h4> This doctor name does not exists.</h4>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#errorModal").modal();
+	</script>
+	
+	<% }  %>
+	
+	<div class="container">
+		<div class="col-sm-6 autocenter">
+			<div class="card">
+				<div class="card-header">
+					<center>
+					<h4>Create Account</h4>
+					</center>
+				</div>
+				<div class="card-body">
+					<form action="/doctor-register" method="post"  class="needs-validation" novalidate autocomplete="off">
+						<div class="form-group">
+							<label for="name_doctor">Doctor Name:</label>
+							<input type="text" class="form-control" placeholder="Enter Name" name="name_doctor" id="name_doctor" required>
+							<div class="invalid-feedback">Please fill valid email address.</div>
+						</div>
+						<div class="form-group">
+							<label for="email_doctor">Email address:</label>
+							<input type="email" class="form-control" placeholder="Enter email" name="email_doctor" id="email_doctor" required>
+							<div class="invalid-feedback">Please fill valid email address.</div>
+						</div>
+						<div class="form-group">
+							<label for="pwd">Password:</label>
+							<input type="password" class="form-control" placeholder="Enter password" name="password" id="password" onkeyup= "register();" required>
+							<span id='message'></span>
+							<div class="invalid-feedback">Please fill out this field.</div>
+						</div>
+						<div class="form-group">
+							<label for="confirm password">Confirm Password:</label>
+							<input type="password" class="form-control" placeholder="Enter Confirm Password" name="confirm password" id="confirm password" onkeyup= "register();" required>
+							<span id='message'></span>
+							<div class="invalid-feedback">Please fill out this field.</div>
+						</div>
+						<div class="form-group">
+							<label for="phone_doctor">Phone Number:</label>
+							<input type="phone" class="form-control" placeholder="Enter Phone Number" name="phone_doctor" id="phone_doctor" required>
+							<div class="invalid-feedback">Please fill out this field.</div>
+						</div>
+						<div class="form-group">
+							<label for="age_doctor">Age:</label>
+							<input type="age" class="form-control" placeholder="Enter Age" name="age_doctor" id="age_doctor" required>
+							<div class="invalid-feedback">Please fill out this field.</div>					 
+						</div>
+						<div class="form-group">
+							<label for="gender_doctor">Gender:</label>
+							<select class="form-group" name="gender_doctor" id="gender_doctor"  required >
+								<option value="">select</option>
+								<option>Male</option>
+								<option>Female</option>
+							</select>
+							<div class="invalid-feedback">Please fill valid field.</div>
+						</div>
+						<!-- <div class="form-group">
+							<label for="gender">Gender:</label>
+							<input type="gender" class="form-control" placeholder="Enter Gender" name="gender" id="gender" required>
+							<div class="invalid-feedback">Please fill out this field.</div>
+						</div> -->
+						<!-- <div class="form-group">
+							<label for="gender" class="text-light">Gender</label>
+							<div class="radio inline">
+								<input type="radio" placeholder="Gender" name="Male" id= "Male" required>
+								<label for="radio-2" class="radio-label">Male</label>
+							</div>
+							<div class="radio inline">
+								<input type="radio" placeholder="Gender" name="Female" id= "Female" required>
+								<label for="radio-3" class="radio-label">Female</label>
+							</div>
+						</div> -->
+						<div class="form-group">
+							<label for="address_doctor">Address:</label>
+							<input type="address" class="form-control" placeholder="Enter Address" name="address_doctor" id="address_doctor" required>
+							<div class="invalid-feedback">Please fill out this field</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+						<br>
+						<br>
+						
+						<a href="/doctor-login">Already have an account? Log In.</a>
+						
+						
+					</form>
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function register() {
+			if (document.getElementById('password').value == document.getElementById('confirm password').value) {
+				document.getElementById('message').style.color = 'yellow';
+				document.getElementById('message').innerHTML = 'matching';
+				
+			}else{
+				// document.getElementById('message').style.color = '#E77471';
+				document.getElementById('message').style.color = 'red';
+				document.getElementById('message').innerHTML = 'not matching';
+			}			
+		}
+	</script>
+	<%- include('footer'); -%>

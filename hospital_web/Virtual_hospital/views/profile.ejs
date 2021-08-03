@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patient Profile</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+		body{
+			margin-top: 10px;
+			background-color: #f0f0f0;
+		}
+		
+		.autocenter{
+			float: none;
+			margin: auto;
+		}		
+	</style>
+</head>
+<body>
+	
+	<!-- <div class="img-rounded" style="float: right; background-color: #f5f4ef; width: 315px; height: 260px; border: 1px solid black; margin: 10px;"> -->
+		
+		<!-- <h3 style="color: #ffffff; background-color: #0f0f0f; text-align: center; margin: 0px; padding: 0px;">Announcements</h3>
+			<p> Hospital Announcements </p>
+			<div id="cc-homepage-announcements" style="height: 200px; overflow-x: hidden; overflow-y: auto; padding: 6px; text-align: left;"> </div> -->
+			
+			<html>
+			<body>
+				<style type="text/css">
+					
+					.card{
+						padding: 0px;
+						background-color:rgba(0,0,0,0.5);
+						/* padding:40px; */
+						box-shadow: 0 0 10px #000;
+						
+					}
+					.list-group{
+						padding: 0px;
+						background-color:rgba(0,0,0,0.5);
+						/* padding:40px; */
+						box-shadow: 0 0 10px #000;
+						
+					}
+					.card-header{
+						padding: 10px;
+						background-color:rgba(136, 135, 135, 0);
+						/* padding:40px; */
+						box-shadow: 0 0 10px #000;
+						color: #000000;
+						text-align: center;
+						
+					}
+					.card-body{
+						padding: 0px;
+						background-color:rgba(172, 169, 169, 0.048);
+						/* padding:40px; */
+						box-shadow: 0 0 10px rgb(184, 170, 170);
+						
+					}
+					.col-sm-6 {
+						padding: 0px;
+						background-color:rgba(172, 169, 169, 0.37);
+						/* padding:40px; */
+						box-shadow: 0 0 10px rgb(184, 170, 170);
+						
+					}
+					.container{
+						padding: 0px;
+						font-family: "Times New Roman", Times, serif;
+						
+					}
+					.list-group-item {
+						padding: 10px;
+						background-color:rgba(53, 47, 47, 0.116);
+						/* padding:40px; */
+						box-shadow: 0 0 10px rgb(184, 170, 170);
+						color: #ffffff;
+						
+					}
+					/* .btn  {
+						background-color: #ffffff50;
+						color: #000000;
+						border-radius: 30%;
+					} */
+					.btn:hover {
+						background-color: #ffffff50;
+						color: white;
+					}
+					
+					/* .body{
+						font-family:poppins;
+						
+					}	 */
+					body {
+						background-image: url('https://thumbs.dreamstime.com/b/doctor-stethoscope-hand-checking-blood-pressure-take-care-elderly-woman-patients-hospital-background-healthcare-187466138.jpg');
+						background-repeat: no-repeat;
+						height: 500px; /* You must set a specified height */
+						background-position:center; /* Center the image */
+						/* background-repeat: no-repeat; */
+						background-size: cover; 
+						color: #000000;
+						/* filter:blur(2px); */
+						content:"";
+						position:"fixed";
+						display:block;
+					}
+					/* a {
+						background-color: rgb(0, 89, 255);
+						color: white;
+						padding: 1em 1em;
+						text-decoration:underline;
+						text-transform: uppercase;
+					} */
+					/* a {
+						display:table;
+						height: 20px;
+						width: auto;
+						border: 1px solid rgb(224, 217, 217);
+					} */
+					a {
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						border-radius: 4px;
+						border: solid 1px #20538D;
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+						-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						background: #3967cc;
+						color: #FFF;
+						padding: 8px 12px;
+						text-decoration: none;
+						background-color: #ffffff50;
+						color: #000000;
+						border-radius: 30%;
+						background-color: #ffffff50;
+						color: rgb(0, 0, 0);
+						
+					}
+					.btn {
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						border-radius: 4px;
+						border: solid 1px #20538D;
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+						-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+						background: #3967cc;
+						color: #FFF;
+						padding: 8px 12px;
+						text-decoration: none;
+						background-color: #ffffff50;
+						color: #000000;
+						border-radius: 30%;
+						
+						
+						
+					}
+					/* .aheader{
+						display: block;
+						width: 500px;
+						height: 500px;
+						background: #5e5e5e;
+					} */
+					.announce{
+						position: absolute;
+						top: 10px;
+						right: 19px;
+						font-size: 20px;
+						font-family: "Times New Roman", Times, serif;
+					}
+				</style>
+			</body>
+			</html>
+		</div>
+		<div class="container">
+			<div class="col-sm-6 autocenter">
+				<div class="card">
+					<div class="card-header">
+						<h4 style="color: rgb(255, 253, 253);"><b>PROFILE INFO</b></h4>
+					</div>
+					<div class="card-body">
+						<div class="list-group">	
+							
+							<div class="list-group-item">
+								<label >Email: </label> <%=email; %>					
+							</div>
+							<div class="list-group-item">
+								<label>Username: </label> <%=username; %>				
+							</div>
+							<div class="list-group-item">
+								<label>Password: </label> <%=password; %>					
+							</div>
+							<div class="list-group-item">
+								<label>Mobile: </label> <%=mobile; %>					
+							</div>
+							<div class="list-group-item">
+								<label>Age: </label> <%=age; %>					
+							</div>
+							<div class="list-group-item">
+								<label>Gender: </label> <%=gender; %>					
+							</div>
+							<!-- <div class="announce">
+								<label>Announcements: </label> <%=announcements; %>					
+							</div> -->
+							
+						</div>
+						<!-- <div class="announce">
+							<label>Announcements: </label> <%=announcements; %>					
+						</div> -->
+						
+						<br>
+						<center>
+							<br>
+							<% details.forEach(function(item){ %>
+								<td>
+									<!-- <a href="/profile-edit?id=<%=item._id%>"><b>Profile Edit</b></a> -->
+									<a href="/book-appointment?id=<%=item._id%>"><b>Book Appointment</b></a>
+								</td>
+								<br>
+								
+								<br>
+								<!-- <button class="btn btn-primary" onclick="location.assign('/appo-status')">Appointment Status</button> -->
+								<!-- <td>
+									<a href="/appo-status?id=<%=item._id%>"><b>Appointment Status</b></a>		
+								</td>	
+								<br>
+							-->
+							<button class="btn btn-primary" onclick="location.assign('/appo-status')"><b>Appointment Status</b></button>
+							<br>
+							<br>
+							
+							<td>
+								<!-- <a href="/book-appointment?id=<%=item._id%>"><b>Book Appointment</b></a>	 -->
+								<a href="/profile-edit?id=<%=item._id%>"><b>Profile Edit</b></a>	
+							</td>	
+							<% }) %>	 
+							<br>
+							<br>
+							
+							<button class="btn btn-primary" onclick="location.assign('/logout')"><b>Log Out</b></button>
+						</center>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- <div class = "aheader"> -->
+			<div class="announce">
+				<label>Announcements: </label> <%=announcements; %>					
+			</div>
+		</div>
+		
+		
+		
+		
+		<%- include('footer'); -%>

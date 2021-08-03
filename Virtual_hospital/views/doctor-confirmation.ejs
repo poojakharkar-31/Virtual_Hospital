@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Doctor's Appointments</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body:before {
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image: url(https://media.istockphoto.com/photos/modern-presentation-background-picture-id1215185063?b=1&k=6&m=1215185063&s=170667a&w=0&h=WvPLuPI5gGcFVNC6Fb2Hyc2AvGyK-hvLgSUKqdEaiOI=);
+
+            /* background-image: url(https://wallpapercave.com/wp/wp3085127.jpg); */
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            filter: blur(0px);
+        }
+        .admin-form {
+            position: absolute;
+            top: 178%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            width: 1600px;
+            height: 2500px;
+            padding: 10px 170px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .admin-form h3 {
+            margin: 0%;
+            padding: 0 20 0px;
+            color: #f0ffff;
+            text-align: center;
+            font-size: xx-large;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .admin-form h4 {
+            margin: 10;
+            padding: 100px 20px;
+            color: white;
+            text-align: center;
+            font-size: xx-large;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .admin-form h1 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #f0ffff;
+            font-family: 'Times New Roman', serif;
+
+        }
+        .admin-form p {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        .admin-form input {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .admin-form label {
+            color: #ffffff;
+        }
+        .admin-form th {
+            color: #ffffff;
+            width: auto !important;
+        }
+        .admin-form td {
+            color: #ffffff;
+            width: auto !important;
+        }
+        .admin-form button {
+            height: 40px;
+            color: black;
+            font-family: 'Times New Roman', serif;
+            font-size: 25px;
+            background: lightblue;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            margin-top: 2%;
+        }
+        .admin-form select {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            width: 25%;
+            margin-bottom: 30px;
+        }
+
+        .admin-form label {
+            color: lightblue;
+            font-family:'Times New Roman', serif;
+            font-size: 25px;
+        }
+        .divider{
+            width: 100px;
+           /* height: auto;*/
+            display: inline-block;
+        }
+
+        .filter-post{
+            text-align: center;
+            position: relative;
+            left: 17%;
+            top:0;
+            width: 70%;
+            padding: 550px 0px;
+        }
+        .image-stack {
+            position: relative;
+            left: 20%;
+            top:0;
+            width: 50%;
+            padding: 150px 0px;
+        }
+        .image-stack__item--top{
+            position: absolute;
+
+            width:50%;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="image-stack">
+        <div class="image-stack_item image-stack_item--top">
+            <img src="https://t3.ftcdn.net/jpg/02/16/47/22/360_F_216472247_cT66WDoS0fp1s3wC7eaykMJNDGVbOBPq.jpg" width=900 height=500>
+        </div>
+    </div>
+    <div class="admin-form">
+        <h4><b>Doctor's Appointments </b></h4>
+
+        <!-- <div class="container"> -->
+            <!-- <form action="/doctor-confirmation" method="POST" autocomplete="off">
+                <div class="form-group">
+                    <label for="doctor">Doctor:</label>
+                    <select class="form-group" name="doctor" id="doctor"  required >
+                        <option value="">select</option>
+                        <% doctorlist.forEach(function(item){%>
+                            <option ><%=item.name_doctor %></option>
+                        <%})%>
+                    </select>
+                    <div class="invalid-feedback">Please fill valid field.</div>
+                    
+                </div> -->
+
+
+
+            <div class="row">
+                <h3><br><br>Doctor Details<br><br></h3>
+                <table class="table table-striped">
+                   
+
+                   
+                    <% patientdata.forEach(function(item){ %>
+                    <thead class="thead-light">
+                        <tr>
+                            <th><i><i>Doctors Name :   </i><%=item.doctor %></i></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    
+
+                    
+                    <tbody>
+                        <tr>
+                            <td style="color: rgb(255, 255, 255); font-family: 'Times New Roman', serif; font-size: 20px">Patient Name :   <%=item.username %></td>
+                        </tr>
+                        <tr>
+                            <td style="color: rgb(255, 255, 255); font-family: 'Times New Roman', serif; font-size: 20px">Reason Of appointment :   <%=item.reason %></td>
+                        </tr>
+                        <tr>
+                            <td style="color: rgb(255, 255, 255); font-family: 'Times New Roman', serif; font-size: 20px">Date : <%=item.date %></td>
+                        </tr>
+                        <tr>
+                            <td style="color: rgb(255, 255, 255); font-family: 'Times New Roman', serif; font-size: 20px">Time :    <%=item.time %></td>
+                        </tr>
+                        <tr>
+                            <td style="color: rgb(255, 255, 255); font-family: 'Times New Roman', serif; font-size: 20px">Status :   <%=item.status %></td>
+                        </tr>
+                        
+
+                       
+                        
+
+                        <td>
+                            <h5><a class="btn btn-secondary" href="/doctor_approve?id=<%=item._id %>" style= " color: #000000; font-size: 15px;
+                            background: lightblue; cursor: pointer; border-radius: 25px; border: none; outline: none;">Approve<i class="fa fa-tick fa-lg" aria-hidden="true"></i></a>
+                            <br>
+                            <br>
+                            <a class="btn btn-secondary" href="/doctor_decline?id=<%=item._id %>" style= " color: #fff; font-size: 15px;
+                            background: red; cursor: pointer; border-radius: 25px; border: none; outline: none"; >   Decline  <i class="fa fa-cross fa-lg" aria-hidden="true"></i></a>
+                            <br>
+                            <br>
+                            <br>
+                        </td>
+                        <% }) %>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

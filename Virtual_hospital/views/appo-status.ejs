@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Appointment Status</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+		body{
+			margin-top: 0px;
+			background-color: #f0f0f0;
+		}
+		
+		.autocenter{
+			float: none;
+			margin: auto;
+		}		
+	</style>
+</head>
+<body>
+
+<style>
+	.card{
+			padding: 10px;
+			background-color:rgba(0,0,0,0.5);
+			/* padding:40px; */
+			box-shadow: 0 0 10px #000;
+			
+		}
+		.card-header{
+			text-align: center;
+			color: ivory;
+			font-size: 25px;
+		}
+		.container{
+			font-family: "Times New Roman", Times, serif;
+
+		}
+	/* .body{
+		font-family:poppins;
+
+	}	 */
+	body {
+	background-image: url('https://cdn.technologyadvice.com/wp-content/uploads/2018/09/appointment-scheduling.jpg');
+	background-repeat: no-repeat;
+	height: 670px; /* You must set a specified height */
+  background-position:center; /* Center the image */
+  /* background-repeat: no-repeat; */
+  background-size:cover; 
+	color: #000000;
+	/* filter:blur(2px); */
+	/* content:"";
+	position:"fixed";
+	display:block; */
+}
+.btn {
+                    height: 50px;
+                    color: rgb(255, 255, 255);
+                    font-family: 'Times New Roman', ;
+                    font-size: 20px;
+                    background: rgb(12, 13, 14);
+                    cursor: pointer;
+                    border-radius: 100px;
+                    border: none;
+                    outline: none;
+                    margin-top: 1%;
+					
+                }
+				.list-group-item {
+			padding: 10px;
+			background-color:rgba(53, 47, 47, 0.116);
+			/* padding:40px; */
+			box-shadow: 0 0 10px rgb(184, 170, 170);
+			color: #ffffff;
+			font-size: 25px;
+
+			
+			
+		}
+</style> 
+
+	<div class="container">
+		<div class="col-sm-6 autocenter">
+			<div class="card">
+				<div class="card-header" >
+					<h4 style="font-size:2vw" >Appointment Status</h4>
+				</div>
+				<div class="card-body">
+					<div class="list-group">
+						<div class="list-group-item">
+							<label>Name: </label> <%=username; %>					
+						</div>		
+						<div class="list-group-item">
+							<label>Reason Of Appointment: </label> <%=reason; %>					
+						</div>
+						<div class="list-group-item">
+							<label>Date: </label> <%=date; %>				
+						</div>
+						<div class="list-group-item">
+							<label>Time: </label> <%=time; %>					
+						</div>
+						<div class="list-group-item">
+							<label>Doctor: </label> <%=doctor; %>					
+						</div>
+						<div class="list-group-item">
+							<label>Status: </label> <%=status; %>					
+						</div>
+						
+					</div>
+					<br>
+					<button class="btn btn-primary" onclick="location.assign('/profile')">Profile Page</button>
+					<br>
+					<br>
+					<button class="btn btn-primary" onclick="location.assign('/logout')">Log Out</button>
+					<br>
+					<br>
+					<br>
+					<a href="/patient_chat?id=<%=userid%>">Chat</a>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+<%- include('footer'); -%>

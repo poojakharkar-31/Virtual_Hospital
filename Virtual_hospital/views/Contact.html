@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Us Page</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style type = "text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.sub-header{
+		height: 50vh;
+		width: 100%;
+		/*background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://www.stylemotivation.com/wp-content/uploads/2018/05/img773537-620x369.jpg);*/
+		background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwWTv2ZAY1WgJpuASWZCGIxZJzqLCE52D4Hg&usqp=CAU);
+		background-position: center;
+		background-size: cover;
+		text-align: center;
+		color: rgb(255, 255, 255);
+	}
+	.sub-header h1{
+		margin-top: -40px;
+	}
+
+	nav{
+		display: flex;
+		padding: 2% 6%;
+		justify-content: space-between;
+		align-items: center;
+
+	}
+	nav img{
+		width: 90px;
+	}
+	.nav-links{
+		flex: 1;
+		text-align: right;
+	}
+	.nav-links ul li{
+		list-style: none;
+		display: inline-block;
+		padding: 8px 12px;
+		position: relative;
+	}
+	.nav-links ul li a{
+		color: #fff;
+		text-decoration: none;
+	}
+	.nav-links ul li::after{
+		content: '';
+		width: 0%;
+		height: 2px;
+		/*background: #f44336;*/
+		/*background: #ff9999;*/
+		background: lightblue;
+		display: block;
+		margin: auto;
+		transition: 0.5s;
+	}
+	.nav-links ul li:hover::after{
+		width: 100%;
+	}
+	.text-box{
+		width: 90%;
+		color:  #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+	.text-box h1{
+		font-size: 62px;
+	}
+	.text-box p{
+		margin: 10px 0 40px;
+		font-size: 18px;
+		color: #fff3f3;
+
+	}
+	.hero-btn{
+		display: inline-block;
+		text-decoration: none;
+		color: #fff;
+		border: 1px solid #fff;
+		padding: 12px 24px;
+		font-size: 20px;
+		background: transparent;
+		position: relative;
+		cursor: pointer;
+	}
+	.hero-btn:hover{
+		border: 1px solid lightblue;
+		background: lightblue;
+		transition: 0.5s;
+		color: black;
+	}
+
+	/*---------------------------course-------------------------*/
+	.course{
+		width: 70%;
+		margin: auto;
+		text-align: center;
+		padding-top: 100px;
+	}
+
+	h1{
+		font-size: 36px;
+		font-weight: 600;
+
+	}
+	p{
+		color: black;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 22px;
+		padding: 10px;
+	}
+	.row1{
+		margin-top: 5%;
+		display: flex;
+		justify-content: space-between;
+	}
+	.row2{
+		margin-top: 5%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.course-col{
+		flex-basis: 25%;
+		/*background: #fff3f3;*/
+		/*background: #f0f8ff;*/
+		background: #bcd2ee;
+		border-radius: 10px;
+		margin-bottom: 5%;
+		padding: 50px 12px;
+		box-sizing: border-box;
+		transition: 0.5s;
+	}
+
+	h3{
+		text-align: center;
+		font-weight: 600;
+		margin: 10px 0;
+	}
+	.course-col:hover{
+		box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+	}
+	img{
+		width: 40%;
+		height: 40%;
+	}
+
+	/*------------------------------------feedback ----------------------------------*/
+
+	.feedback{
+		width:  70%;
+		margin: auto;
+		padding-top: 100px;
+		text-align: center;
+	}
+	.row{
+		margin-top: 5%;
+		display: flex;
+		justify-content: space-between;
+	}
+	.feedback-col{
+		flex-basis: 44%;
+		border-radius: 10px;
+		margin-bottom: 5%;
+		text-align: left;
+		background: #fff3f3;
+		padding: 25px;
+		cursor: pointer;
+		display: flex;
+	}
+	.feedback-col img{
+		padding: center ;
+		height: 60px;
+		width: 60px;
+		margin-left: 5px;
+		margin-right: 30px;
+		border-radius: 50%;
+	}
+	.feedback-col:hover{
+		box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+	}
+	.feedback-col p{
+		padding: 0;
+	}
+	.feedback-col h3{
+		margin-top: 15px;
+		text-align: left;
+	}
+	.feedback-col .fa{
+		color: red;
+	}
+
+	/*------------------------------------Contact ----------------------------------*/
+	.contact-us{
+		width: 40%;
+		margin: auto;
+	}
+	.contact-col{
+		flex-basis: 48%;
+		margin-bottom: 30px;
+	}
+	.contact-col div{
+		display: flex;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+	.contact-col div .fa{
+		font-size: 28px;
+		color: #f443;
+	}
+	
+	/* ----------------------------FOOTER --------------------------*/
+
+	.abt{
+		width: 100%;
+		text-align: center;
+		padding: 30px 0;
+	}
+	.abt h4{
+		margin-bottom: 25px;
+		margin-top: 20px;
+		font-weight: 600;
+		font-size: 30px;
+	}	
+
+</style>
+</head>
+<body>
+	<section class="sub-header">
+		<nav>
+			<!-- <a href="mainpage.html"><img src="http://www.celebrity-cell.com/wp-content/uploads/2017/03/call-now.gif"></a> -->
+			<!-- <a href="mainpage.html"><img src="https://i0.wp.com/kashmirobserver.net/wp-content/uploads/2020/03/Helpline.jpg?fit=627%2C498&ssl=1"></a> -->
+			<!-- <a href="mainpage.html"><img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202004/Emergency_helpline_number_2_0.png?d.Cdk3IlfnfcYcai_r91a0XAQCraQilJ&size=770:433"></a> -->
+			<a href="mainpage.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSupj-fpdeD6nIG9LFuKDFFoa5WKQtlqhTtpw&usqp=CAU"></a>
+			<div class="nav-links">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+					<li><a href="/login_admin">ADMIN</a></li>
+					<li><a href="/doctor-login">DOCTOR</a></li>
+					<li><a href="/login">PATIENT</a></li>
+
+				</ul>
+			</div>
+		</nav>
+		<h1>Contact Us</h1>
+	</section>
+
+
+<!-- -----------------------Contact----------------------- -->
+<h1 style="font-size: 40px; font-family:  Arial, Helvetica, sans-serif; text-align: center; color: rgb(0, 0, 0);">Thane</h1>
+	<section class="contact-us">
+		<div class="row">
+			<div class="contact-col">
+				<div>
+					<i style="color:lightblue" class="fa fa-home"></i>
+					<span>
+						<h5>ABC Road, XYZ Building</h5>
+						<p>Thane, Mumbai, Maharashtra</p>
+					</span>
+				</div>
+
+				<div>
+					<i style="color:lightblue"class="fa fa-phone"></i>
+					<span>
+						
+						<h5>+91 8746542784</h5>
+						<p>Monday to Saturday, 10 AM to 8 PM</p>
+					</span>
+				</div>
+
+				<div>
+					<i style="color:lightblue" class="fa fa-envelope-o"></i>
+					<span>
+						<h5>newlifehospital@gmail.com</h5>
+						<p>Email us</p>
+						
+					</span>
+				</div>
+				<div>
+					<span>
+						<h5 style="font-size:30px"><br>24 Hours open for EMERGENCY!!!</h5>
+					</span>
+				</div>
+
+
+				
+			</div>
+		</div>
+	</section>
+
+<!-- <h1 style="font-size: 40px; font-family: 'Times New Roman', serif; text-align: center; color: darkred;">Kalwa</h1>
+	<section class="contact-us">
+		<div class="row">
+			<div class="contact-col">
+				<div>
+					<i class="fa fa-home"></i>
+					<span>
+						<h5>XYZ Road, ABC Building</h5>
+						<p>Kalwa, Mumbai, Maharashtra</p>
+					</span>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<span>
+						<h5>+91 8746542784</h5>
+						<p>Monday to Saturday, 10 AM to 8 PM</p>
+					</span>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope-o"></i>
+					<span>
+						<h5>codersclubkalwa@gmail.com</h5>
+						<p>Email us</p>
+					</span>
+				</div>
+
+
+				
+			</div>
+		</div>
+	</section>
+
+<h1 style="font-size: 40px; font-family: 'Times New Roman', serif; text-align: center; color: darkred;">Kalyan</h1>
+	<section class="contact-us">
+		<div class="row">
+			<div class="contact-col">
+				<div>
+					<i class="fa fa-home"></i>
+					<span>
+						<h5>XYZ Road, ABC Building</h5>
+						<p>Kalyan, Mumbai, Maharashtra</p>
+					</span>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<span>
+						<h5>+91 8946542784</h5>
+						<p>Monday to Saturday, 10 AM to 8 PM</p>
+					</span>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope-o"></i>
+					<span>
+						<h5>codersclubkalyan@gmail.com</h5>
+						<p>Email us</p>
+					</span>
+				</div>
+
+
+				
+			</div>
+		</div>
+	</section>
+
+<h1 style="font-size: 40px; font-family: 'Times New Roman', serif; text-align: center; color: darkred;">Vashi</h1>
+	<section class="contact-us">
+		<div class="row">
+			<div class="contact-col">
+				<div>
+					<i class="fa fa-home"></i>
+					<span>
+						<h5>XYZ Road, ABC Building</h5>
+						<p>Vashi, Mumbai, Maharashtra</p>
+					</span>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<span>
+						<h5>+91 7746542784</h5>
+						<p>Monday to Saturday, 10 AM to 8 PM</p>
+					</span>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope-o"></i>
+					<span>
+						<h5>codersclubvashi@gmail.com</h5>
+						<p>Email us</p>
+					</span>
+				</div>
+
+
+				
+			</div>
+		</div>
+	</section>
+
+<h1 style="font-size: 40px; font-family: 'Times New Roman', serif; text-align: center; color: darkred;">Panvel</h1>
+	<section class="contact-us">
+		<div class="row">
+			<div class="contact-col">
+				<div>
+					<i class="fa fa-home"></i>
+					<span>
+						<h5>XYZ Road, ABC Building</h5>
+						<p>Panvel, Mumbai, Maharashtra</p>
+					</span>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<span>
+						<h5>+91 9746542784</h5>
+						<p>Monday to Saturday, 10 AM to 8 PM</p>
+					</span>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope-o"></i>
+					<span>
+						<h5>codersclubpanvel@gmail.com</h5>
+						<p>Email us</p>
+					</span>
+				</div>
+
+
+				
+			</div>
+		</div>
+	</section> -->
+
+<!-- ----------------------About Us ------------------ -->
+
+	<section class="abt">
+		<h4>About Us</h4>
+		<p>
+			Our aim is to give every patient the prospect of a better quality of life. <br>To ensure accessible and affordable quality healthcare by compassionate medical professionals to all.<br>To cultivate an environment of trust, honesty, mutual respect, equality, and ethics.
+		</p>
+		<div class="icons">
+			<i class="fa fa-facebook">&nbsp</i>
+			<i class="fa fa-twitter">&nbsp</i>
+			<i class="fa fa-instagram">&nbsp</i>
+			<i class="fa fa-linkedin">&nbsp</i>
+			<i class="fa fa-whatsapp">&nbsp</i>
+		</div>
+	</section>
+
+
+	
+
+
+</body>
+</html>

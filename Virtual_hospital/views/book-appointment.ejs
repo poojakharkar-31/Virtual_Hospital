@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Appointment</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<style type="text/css">
+		body{
+			margin-top: 50px;
+			background-color: #f0f0f0;
+		}
+		
+		.autocenter{
+			float: none;
+			margin: auto;
+		}		
+	</style>
+</head>
+<body>
+
+<title></title>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="Stylesheet"
+        type="text/css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script language="javascript">
+        $(document).ready(function () {
+            $("#date").datepicker({
+                minDate: 0,
+				dateFormat: 'dd/mm/yy'
+            });
+        });
+    </script>
+	<style>
+		.card{
+				padding: 10px;
+				background-color:rgba(0,0,0,0.5);
+				/* padding:40px; */
+				box-shadow: 0 0 10px #000;
+				
+			}
+		/* .body{
+			font-family:poppins;
+	
+		}	 */
+		body {
+		background-image: url('https://ramoslawfirm.com/wp-content/uploads/2020/05/docs-e1589476851984.jpg');
+		background-repeat: no-repeat;
+		height: 670px; /* You must set a specified height */
+	  background-position:center; /* Center the image */
+	  /* background-repeat: no-repeat; */
+	  background-size:cover; 
+		color: #ffffff;
+		/* filter:blur(2px); */
+		/* content:"";
+		position:"fixed";
+		display:block; */
+	}
+	</style> 
+</head>
+	<% if(doctorlist=="exists"){ %> 
+		<!-- The Modal -->
+		<div class="modal" id="errorModal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h4 class="modal-title">Error</h4>
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		      </div>
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        <h4>An appointment for particular time and date already exists.</h4>
+		      </div>
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		      </div><% doctorlist.forEach(function(item){%>
+				<%})%>
+            
+			</div>
+		    </div>
+		  </div>
+		</div>
+		<script type="text/javascript">
+			$("#errorModal").modal();
+		</script>
+	<% }else if(doctorlist=='success'){ %>
+		<div class="modal" id="successModal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h4 class="modal-title">Success</h4>
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		      </div>
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        <h4>Appointment Booked Successfully.</h4>
+		      </div>
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-danger" onclick="location.assign('/profile')">Profile</button>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+		<script type="text/javascript">
+			$("#successModal").modal();
+		</script>
+
+	<% }  %>
+
+	<div class="container">
+		<div class="col-sm-6 autocenter">
+			<div class="card">
+				<div class="card-header">
+					<h4>Book An Appointment </h4>
+				</div>
+				<div class="card-body">
+					<form action="/book-appointment" method="post"  class="needs-validation" novalidate autocomplete="off">
+						<!-- <div class="form-group">
+							<label for="name">Name:</label>
+							<input type="text" class="form-control" placeholder="Enter Name" name="username" value="<%=username %>"  id="username" disabled required >
+							<div class="invalid-feedback">Please fill valid field.</div>
+						 </div> -->
+						 <div class="form-group">
+							<label for="username">Name:</label>
+							<select class="form-group" name="username" id="username"  required >
+								<option value="">select</option>
+								
+									<option ><%=username %></option>
+								
+							</select>
+							<div class="invalid-feedback">Please fill valid field.</div>
+						 </div>
+						 
+					  <div class="form-group">
+					     <label for="reason">Reason of appointment:</label>
+					     <input type="text" class="form-control" placeholder="Enter Reason" name="reason" id="reason" required>
+					     <div class="invalid-feedback">Please fill valid field.</div>
+					  </div>
+					  <!-- <div class="form-group">
+						<label for="date">Date:</label>
+						<input type="date"  class="form-control" placeholder="Enter Date" name="date" id="date" required>
+						<div class="invalid-feedback">Please fill valid field.</div>
+					 </div> -->
+					 <div class="form-group">
+						<label for="date">Date:</label>
+						<input type="text" class="form-control" placeholder="Enter date" name="date" id="date"  required>
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+						<div class="invalid-feedback">Please fill the date.</div>
+					</div>
+					 <div class="form-group">
+						<label for="time">Time:</label>
+						<input type="time" class="form-control" placeholder="Enter Time" name="time" id="time" required>
+						<small style="color: rgb(0, 0, 0);" >(Hospital hours are between 11am to 9pm)</small>
+						<div class="invalid-feedback">Please fill valid field.</div>
+					 </div>
+					 <div class="form-group">
+						<label for="doctor">Doctor:</label>
+						<select class="form-group" name="doctor" id="doctor"  required >
+							<option value="">select</option>
+							<% doctorlist.forEach(function(item){%>
+								<option ><%=item.name_doctor %></option>
+							<%})%>
+						</select>
+						<div class="invalid-feedback">Please fill valid field.</div>
+					 </div>
+					 <div class="form-group">
+						<label for="status">Status:</label>
+						<select class="form-group" name="status" id="status"  required >
+							<option value="">select</option>
+							<option>Waiting Approval</option>
+						</select>
+						<div class="invalid-feedback">Please fill valid field.</div>
+					 </div>
+					
+					  
+					  <button type="submit" class="btn btn-primary">Submit</button>
+					  <br>
+					  <br>
+					 
+					  <!-- <td>
+						<a href="/appo-status"><b>Appointment Status</b></a>		
+							</td>	 -->
+							<!-- <button type="submit" class="btn btn-primary">Appointment Status</button>	
+					 <br> -->
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<%- include('footer'); -%>
